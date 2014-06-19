@@ -1,76 +1,104 @@
-/************************************************************************
-	usb_config.c
+/********************************************************************
+ FileName:     	usb_config.h
+ Dependencies: 	Always: GenericTypeDefs.h, usb_device.h
+               	Situational: usb_function_hid.h, usb_function_cdc.h, usb_function_msd.h, etc.
+ Processor:		PIC18 or PIC24 USB Microcontrollers
+ Hardware:		The code is natively intended to be used on the following
+ 				hardware platforms: PICDEM™ FS USB Demo Board, 
+ 				PIC18F87J50 FS USB Plug-In Module, or
+ 				Explorer 16 + PIC24 USB PIM.  The firmware may be
+ 				modified for use on other USB platforms by editing the
+ 				HardwareProfile.h file.
+ Complier:  	Microchip C18 (for PIC18) or C30 (for PIC24)
+ Company:		Microchip Technology, Inc.
 
-	WFF USB Generic HID Demonstration 3
-    usbGenericHidCommunication reference firmware 3_0_0_0
-    Copyright (C) 2011 Simon Inns
+ Software License Agreement:
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+ The software supplied herewith by Microchip Technology Incorporated
+ (the “Company”) for its PIC® Microcontroller is intended and
+ supplied to you, the Company’s customer, for use solely and
+ exclusively on Microchip PIC Microcontroller products. The
+ software is owned by the Company and/or its supplier, and is
+ protected under applicable copyright laws. All rights are reserved.
+ Any use in violation of the foregoing restrictions may subject the
+ user to criminal sanctions under applicable laws, as well as to
+ civil liability for the breach of the terms and conditions of this
+ license.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+ THIS SOFTWARE IS PROVIDED IN AN “AS IS” CONDITION. NO WARRANTIES,
+ WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED
+ TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. THE COMPANY SHALL NOT,
+ IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL OR
+ CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+********************************************************************
+ File Description:
 
-	Email: simon.inns@gmail.com
+ Change History:
+  Rev   Date         Description
+  1.0   11/19/2004   Initial release
+  2.1   02/26/2007   Updated for simplicity and to use common
+                     coding style
+ *******************************************************************/
 
-************************************************************************/
+/*********************************************************************
+ * Descriptor specific type definitions are defined in: usbd.h
+ ********************************************************************/
 
-#ifndef USBCONFIG_H
-#define USBCONFIG_H
+#ifndef USBCFG_H
+#define USBCFG_H
 
-// Definitions
-#define USB_EP0_BUFF_SIZE		8	// Valid Options are 8, 16, 32, or 64 bytes.								
-#define USB_MAX_NUM_INT     	1
+/** DEFINITIONS ****************************************************/
+#define USB_EP0_BUFF_SIZE		8	// Valid Options: 8, 16, 32, or 64 bytes.
+								// Using larger options take more SRAM, but
+								// does not provide much advantage in most types
+								// of applications.  Exceptions to this, are applications
+								// that use EP0 IN or OUT for sending large amounts of
+								// application related data.
+									
+#define USB_MAX_NUM_INT     	1   // For tracking Alternate Setting
 #define USB_MAX_EP_NUMBER	    1
 
-// USB device descriptor
+//Device descriptor - if these two definitions are not defined then
+//  a ROM USB_DEVICE_DESCRIPTOR variable by the exact name of device_dsc
+//  must exist.
 #define USB_USER_DEVICE_DESCRIPTOR &device_dsc
 #define USB_USER_DEVICE_DESCRIPTOR_INCLUDE extern ROM USB_DEVICE_DESCRIPTOR device_dsc
 
-// Configuration descriptors
+//Configuration descriptors - if these two definitions do not exist then
+//  a ROM BYTE *ROM variable named exactly USB_CD_Ptr[] must exist.
 #define USB_USER_CONFIG_DESCRIPTOR USB_CD_Ptr
 #define USB_USER_CONFIG_DESCRIPTOR_INCLUDE extern ROM BYTE *ROM USB_CD_Ptr[]
 
-// Set the USB ping pong mode
+//Make sure only one of the below "#define USB_PING_PONG_MODE"
+//is uncommented.
+//#define USB_PING_PONG_MODE USB_PING_PONG__NO_PING_PONG
 #define USB_PING_PONG_MODE USB_PING_PONG__FULL_PING_PONG
+//#define USB_PING_PONG_MODE USB_PING_PONG__EP0_OUT_ONLY
+//#define USB_PING_PONG_MODE USB_PING_PONG__ALL_BUT_EP0		//NOTE: This mode is not supported in PIC18F4550 family rev A3 devices
 
-// Uncomment either USB_POLLING or USB_INTERRUPT to set how the USB
-// device is updated
+
 #define USB_POLLING
 //#define USB_INTERRUPT
 
-// Set the USB pullup option for usb_device.h
+/* Parameter definitions are defined in usb_device.h */
 #define USB_PULLUP_OPTION USB_PULLUP_ENABLE
 //#define USB_PULLUP_OPTION USB_PULLUP_DISABLED
 
-// Use the internal USB transceiver module
 #define USB_TRANSCEIVER_OPTION USB_INTERNAL_TRANSCEIVER
+//External Transceiver support is not available on all product families.  Please
+//  refer to the product family datasheet for more information if this feature
+//  is available on the target processor.
+//#define USB_TRANSCEIVER_OPTION USB_EXTERNAL_TRANSCEIVER
 
-// Set either full-speed or low-speed USB device mode
 #define USB_SPEED_OPTION USB_FULL_SPEED
-//#define USB_SPEED_OPTION USB_LOW_SPEED
-
-// Option to enable auto-arming of the status stage of control transfers
-#define USB_ENABLE_STATUS_STAGE_TIMEOUTS
-
-// Section 9.2.6 of the USB 2.0 specifications state that:
-// Control transfers with no data stage must complete within 50ms of the start of the control transfer.
-// Control transfers with (IN) data stage must complete within 50ms of sending the last IN data packet in fullfilment of the data stage.
-// Control transfers with (OUT) data stage have no specific status stage timing (but must not exceed 5 seconds)
-#define USB_STATUS_STAGE_TIMEOUT     (BYTE)45
+//#define USB_SPEED_OPTION USB_LOW_SPEED //(not valid option for PIC24F devices)
 
 #define USB_SUPPORT_DEVICE
 
 #define USB_NUM_STRING_DESCRIPTORS 3
 
-// Enable/disable event handlers
 //#define USB_INTERRUPT_LEGACY_CALLBACKS
 #define USB_ENABLE_ALL_HANDLERS
 //#define USB_ENABLE_SUSPEND_HANDLER
@@ -83,15 +111,19 @@
 //#define USB_ENABLE_EP0_DATA_HANDLER
 //#define USB_ENABLE_TRANSFER_COMPLETE_HANDLER
 
-// Set device type to USB HID
+/** DEVICE CLASS USAGE *********************************************/
 #define USB_USE_HID
 
-// HID endpoint allocation
+/** ENDPOINTS ALLOCATION *******************************************/
+
+/* HID */
 #define HID_INTF_ID             0x00
 #define HID_EP 					1
-#define HID_INT_OUT_EP_SIZE     3
-#define HID_INT_IN_EP_SIZE      3
+#define HID_INT_OUT_EP_SIZE     3 //64
+#define HID_INT_IN_EP_SIZE      3 //64
 #define HID_NUM_OF_DSC          1
-#define HID_RPT01_SIZE          28
+#define HID_RPT01_SIZE          29
 
-#endif
+/** DEFINITIONS ****************************************************/
+
+#endif //USBCFG_H
