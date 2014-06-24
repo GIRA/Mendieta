@@ -254,8 +254,8 @@ sizeof(sd001),USB_DESCRIPTOR_STRING,
 //Product string descriptor
 ROM struct{BYTE bLength;BYTE bDscType;WORD string[22];}sd002={
 sizeof(sd002),USB_DESCRIPTOR_STRING,
-{'S','i','m','p','l','e',' ','H','I','D',' ',
-'D','e','v','i','c','e',' ','D','e','m','o'
+{'M','e','n','d','i','e','t','a',' ','v','e',
+'r','s','i','o','n',' ','1','.','0','.','0'
 }};
 
 

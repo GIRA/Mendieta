@@ -1,4 +1,5 @@
 #include "USB_HID.h"
+#include <delays.h>
 
 void setup(void);
 void loop(void);
@@ -6,12 +7,19 @@ void processUsbCommands(void);
 void executeDigitalWrite(void);
 void executePortMode(void);
 
-
+void delay(void)
+{
+	int i;
+	for (i=0; i<=1; i++)
+	 {
+	      Delay10KTCYx(250);   // Delay of 10000*250 Cycles
+	 }
+}
 
 void main(void){
 
     InitializeSystem();
-
+	
     #if defined(USB_INTERRUPT)
         USBDeviceAttach();
     #endif
@@ -27,6 +35,7 @@ void main(void){
     				  
         loop();
     }
+	
 }
 
 void setup(void)
@@ -193,13 +202,7 @@ void executePortMode(void)
 			TRISB = value;
 			break;
 		case 2:
-			TRISC = value;
-			break;
-		case 3:
 			TRISD = value;
-			break;
-		case 4:
-			TRISE = value;
 			break;
 	}
 
