@@ -5,7 +5,9 @@ void setup(void);
 void loop(void);
 void processUsbCommands(void);
 void executeDigitalWrite(void);
-void executePortMode(void);
+void executePinMode(void);
+
+int tick = 0;
 
 void delay(void)
 {
@@ -32,7 +34,8 @@ void main(void){
 		// Check bus status and service USB interrupts.
         USBDeviceTasks(); 
         #endif
-    				  
+
+		tick++;	  
         loop();
     }
 	
@@ -40,16 +43,33 @@ void main(void){
 
 void setup(void)
 {
-	TRISA = 0;
-	TRISB = 0;
-	TRISD = 0;
+	TRISA = 0x00;
+	TRISB = 0x00;
+	TRISD = 0x00;
 }
+
 
 void loop(void)
 {
 	processUsbCommands();
 }
 
+int lastSendTime = 0;
+void send(void)
+{
+	if (tick - lastSendTime < 100) return;
+	lastSendTime = tick;
+
+	ToSendDataBuffer[0] = PORTA;
+	ToSendDataBuffer[1] = PORTD;
+	ToSendDataBuffer[2] = PORTB;
+
+	// Transmit the response to the host
+    if(!HIDTxHandleBusy(USBInHandle))
+	{
+		USBInHandle = HIDTxPacket(HID_EP,(BYTE*)&ToSendDataBuffer[0],64);
+	}
+}
 
 // Process USB commands
 void processUsbCommands(void)
@@ -67,33 +87,21 @@ void processUsbCommands(void)
 		// Command mode    
         switch(ReceivedDataBuffer[0])
 		{
-			case 0x00:  // RQ_PORT_MODE (PORT, MODE)
-				executePortMode();
+			case 0x00:  // RQ_PIN_MODE (PIN, MODE)
+				executePinMode();
 				break;
 			case 0x01:	// RQ_DIGITAL_WRITE (PIN, VAL)
 				executeDigitalWrite();
-				break;
-            case 0x02:  // RQ_PORT_REPORT
-				ToSendDataBuffer[0] = PORTA;
-				ToSendDataBuffer[1] = PORTB;
-				ToSendDataBuffer[2] = PORTC;
-				ToSendDataBuffer[3] = PORTD;
-				ToSendDataBuffer[4] = PORTE;
-
-				// Transmit the response to the host
-                if(!HIDTxHandleBusy(USBInHandle))
-				{
-					USBInHandle = HIDTxPacket(HID_EP,(BYTE*)&ToSendDataBuffer[0],64);
-				}
-            	break;            	
+				break;   	
 			
             default:	// Unknown command received
            		break;
 		}
-		 
         // Re-arm the OUT endpoint for the next packet
         USBOutHandle = HIDRxPacket(HID_EP,(BYTE*)&ReceivedDataBuffer,64);
   	}
+
+	send();
 }
 
 void executeDigitalWrite(void)
@@ -188,21 +196,75 @@ void executeDigitalWrite(void)
 	}
 }
 
-void executePortMode(void)
+void executePinMode(void)
 {
-	int port = ReceivedDataBuffer[1];
+	int pin = ReceivedDataBuffer[1];
 	int value = ReceivedDataBuffer[2];
 	
-	switch (port)
+	switch (pin)
 	{
-		case 0:
-			TRISA = value;
+		case 0x2:
+			TRISAbits.RA0 = value;
 			break;
-		case 1:
-			TRISB = value;
+		case 0x3:
+			TRISAbits.RA1 = value;
 			break;
-		case 2:
-			TRISD = value;
+		case 0x4:
+			TRISAbits.RA2 = value;
+			break;
+		case 0x5:
+			TRISAbits.RA3 = value;
+			break;
+		case 0x6:
+			TRISAbits.RA4 = value;
+			break;
+		case 0x13:
+			TRISDbits.RD0 = value;
+			break;
+		case 0x14:
+			TRISDbits.RD1 = value;
+			break;
+		case 0x15:
+			TRISDbits.RD2 = value;
+			break;
+		case 0x16:
+			TRISDbits.RD3 = value;
+			break;
+		case 0x1B:
+			TRISDbits.RD4 = value;
+			break;
+		case 0x1C:
+			TRISDbits.RD5 = value;
+			break;
+		case 0x1D:
+			TRISDbits.RD6 = value;
+			break;
+		case 0x1E:
+			TRISDbits.RD7 = value;
+			break;
+		case 0x21:
+			TRISBbits.RB0 = value;
+			break;
+		case 0x22:
+			TRISBbits.RB1 = value;
+			break;
+		case 0x23:
+			TRISBbits.RB2 = value;
+			break;
+		case 0x24:
+			TRISBbits.RB3 = value;
+			break;
+		case 0x25:
+			TRISBbits.RB4 = value;
+			break;
+		case 0x26:
+			TRISBbits.RB5 = value;
+			break;
+		case 0x27:
+			TRISBbits.RB6 = value;
+			break;
+		case 0x28:
+			TRISBbits.RB7 = value;
 			break;
 	}
 
