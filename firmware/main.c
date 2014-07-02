@@ -6,6 +6,7 @@ void loop(void);
 void processUsbCommands(void);
 void executeDigitalWrite(void);
 void executePinMode(void);
+WORD_VAL ReadADC(void);
 
 int tick = 0;
 
@@ -16,6 +17,26 @@ void delay(void)
 	 {
 	      Delay10KTCYx(250);   // Delay of 10000*250 Cycles
 	 }
+}
+
+WORD_VAL ReadADC(void)
+{
+    WORD_VAL w;
+
+	// mInitPot();
+	TRISAbits.TRISA5=1;
+	ADCON0=0x11;
+	ADCON2=0x3C;
+	ADCON2bits.ADFM = 1;
+
+
+    ADCON0bits.GO = 1;              // Start AD conversion
+    while(ADCON0bits.NOT_DONE);     // Wait for conversion
+
+    w.v[0] = ADRESL;
+    w.v[1] = ADRESH;
+ 
+    return w;
 }
 
 void main(void){
@@ -43,7 +64,7 @@ void main(void){
 
 void setup(void)
 {
-	TRISA = 0x00;
+	TRISA = 0xFF;
 	TRISB = 0x00;
 	TRISD = 0x00;
 }
@@ -57,12 +78,18 @@ void loop(void)
 int lastSendTime = 0;
 void send(void)
 {
+	WORD_VAL w;
 	if (tick - lastSendTime < 100) return;
 	lastSendTime = tick;
 
 	ToSendDataBuffer[0] = PORTA;
 	ToSendDataBuffer[1] = PORTD;
 	ToSendDataBuffer[2] = PORTB;
+
+	w = ReadADC();
+
+	ToSendDataBuffer[3] = w.v[0];
+	ToSendDataBuffer[4] = w.v[1];
 
 	// Transmit the response to the host
     if(!HIDTxHandleBusy(USBInHandle))
