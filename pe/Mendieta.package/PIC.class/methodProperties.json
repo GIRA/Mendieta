@@ -1,0 +1,24 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"analogPins" : "Richo 7/2/2014 16:46",
+		"configurePins" : "Richo 7/2/2014 17:06",
+		"connect" : "Richo 6/25/2014 17:05",
+		"digitalPins" : "Richo 7/2/2014 16:46",
+		"disconnect" : "Richo 11/19/2013 17:07",
+		"initialize" : "Richo 7/2/2014 16:36",
+		"isAnalog:" : "Richo 7/2/2014 16:38",
+		"isConnected" : "Richo 8/22/2013 17:53",
+		"isDigital:" : "Richo 7/2/2014 16:41",
+		"pin:" : "Richo 7/2/2014 16:49",
+		"processAnalogs:" : "Richo 7/10/2014 13:47",
+		"processInput" : "Richo 7/10/2014 13:36",
+		"processPORTA:" : "Richo 7/10/2014 13:34",
+		"processPORTB:" : "Richo 7/10/2014 13:35",
+		"processPORTD:" : "Richo 7/10/2014 13:35",
+		"protocol" : "Richo 7/2/2014 16:57",
+		"startStepping" : "Richo 7/2/2014 18:10",
+		"step" : "Richo 7/2/2014 18:11",
+		"stepTime" : "Richo 7/2/2014 18:11",
+		"stopStepping" : "Richo 11/19/2013 17:07" } }

@@ -1,0 +1,3 @@
+updating
+updateMode
+	self subclassResponsibility 

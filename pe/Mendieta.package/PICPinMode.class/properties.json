@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Core-PinModes",
+	"classinstvars" : [
+		"uniqueInstance" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "PICPinMode",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

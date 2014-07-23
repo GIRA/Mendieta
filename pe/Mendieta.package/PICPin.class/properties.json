@@ -1,0 +1,17 @@
+{
+	"category" : "Mendieta-Core-Pins",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"pic",
+		"number",
+		"value",
+		"mode" ],
+	"name" : "PICPin",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

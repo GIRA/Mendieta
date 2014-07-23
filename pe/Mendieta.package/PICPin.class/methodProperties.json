@@ -1,0 +1,19 @@
+{
+	"class" : {
+		"on:number:" : "Richo 7/2/2014 16:30" },
+	"instance" : {
+		"initialize" : "Richo 7/2/2014 16:43",
+		"initializeWith:number:" : "Richo 7/2/2014 16:42",
+		"isAnalog" : "Richo 7/2/2014 16:44",
+		"isDigital" : "Richo 7/2/2014 16:44",
+		"isInvalid" : "Richo 7/2/2014 16:44",
+		"mode" : "Richo 7/2/2014 15:23",
+		"mode:" : "Richo 7/2/2014 17:00",
+		"printOn:" : "Richo 7/2/2014 16:48",
+		"setInput" : "Richo 7/2/2014 18:08",
+		"setOutput" : "Richo 7/2/2014 18:08",
+		"update" : "Richo 7/2/2014 17:06",
+		"updateMode" : "Richo 7/2/2014 17:00",
+		"updateValue" : "Richo 7/2/2014 17:00",
+		"value" : "Richo 7/2/2014 15:23",
+		"value:" : "Richo 7/2/2014 17:04" } }

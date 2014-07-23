@@ -1,0 +1,3 @@
+connection
+isConnected
+	^ pic isConnected

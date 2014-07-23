@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"device" ],
+	"name" : "PICProtocol",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

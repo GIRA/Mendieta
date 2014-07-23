@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Etoys",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "PICPlayer",
+	"pools" : [
+		 ],
+	"super" : "Player",
+	"type" : "normal" }
