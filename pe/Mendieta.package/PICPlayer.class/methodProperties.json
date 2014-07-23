@@ -1,6 +1,8 @@
 {
 	"class" : {
-		 },
+		"isUniClass" : "Richo 7/23/2014 19:53",
+		"officialClass" : "Richo 7/23/2014 19:53",
+		"wantsChangeSetLogging" : "Richo 7/23/2014 19:53" },
 	"instance" : {
 		"connect" : "Richo 8/22/2013 17:48",
 		"disconnect" : "Richo 8/22/2013 17:48",
