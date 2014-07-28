@@ -10,4 +10,5 @@ send: aByteArray
 	buf replaceFrom: 2
 		to: aByteArray size + 1
 		with: aByteArray.
-	self hid write: device with: buf.
+	[self hid write: device with: buf]
+		on: Error do: [self disconnect].
