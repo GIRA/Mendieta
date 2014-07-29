@@ -71,39 +71,13 @@ void YourHighPriorityISRCode();
 void YourLowPriorityISRCode();
 WORD_VAL ReadPOT(void);
 
-	
-#pragma code HIGH_INTERRUPT_VECTOR = 0x08
-void High_ISR (void)	{
-	_asm goto YourHighPriorityISRCode _endasm
-}
-#pragma code LOW_INTERRUPT_VECTOR = 0x18
-void Low_ISR (void){
-	_asm goto YourLowPriorityISRCode _endasm
-}
-	
-#pragma code
-
-
-#pragma interrupt YourHighPriorityISRCode
-void YourHighPriorityISRCode(){
-	#if defined(USB_INTERRUPT)
-		USBDeviceTasks();
-    #endif
-}
-#pragma interruptlow YourLowPriorityISRCode
-void YourLowPriorityISRCode(){
-	
-}
-
-
-#pragma code
 
 /********************************************************************/
 
 static void InitializeSystem(void)
 {
 
-    ADCON1 |= 0x0F;                 // Default all pins to digital
+    //ADCON1 |= 0x0F;                 // Default all pins to digital
  
     #if defined(USE_USB_BUS_SENSE_IO)
     tris_usb_bus_sense = INPUT_PIN; // See HardwareProfile.h
