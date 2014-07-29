@@ -3,6 +3,7 @@
 		"initialize" : "Richo 8/22/2013 18:13",
 		"rqDigitalWrite" : "Richo 8/22/2013 17:29",
 		"rqPinMode" : "Richo 6/25/2014 16:43",
+		"rqServoPWM" : "Richo 7/28/2014 16:53",
 		"shutDown" : "Richo 8/22/2013 18:13" },
 	"instance" : {
 		"connect" : "Richo 7/28/2014 15:54",
@@ -12,4 +13,5 @@
 		"isConnected" : "Richo 8/22/2013 17:41",
 		"pin:mode:" : "Richo 6/25/2014 16:37",
 		"receive" : "Richo 7/28/2014 15:54",
-		"send:" : "Richo 7/28/2014 15:52" } }
+		"send:" : "Richo 7/28/2014 15:52",
+		"servo:pwm:" : "Richo 7/28/2014 17:04" } }

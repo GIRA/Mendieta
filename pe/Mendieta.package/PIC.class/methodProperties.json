@@ -11,6 +11,7 @@
 		"isAnalog:" : "Richo 7/2/2014 16:38",
 		"isConnected" : "Richo 8/22/2013 17:53",
 		"isDigital:" : "Richo 7/2/2014 16:41",
+		"pins" : "Richo 7/28/2014 16:15",
 		"pin:" : "Richo 7/2/2014 16:49",
 		"processAnalogs:" : "Richo 7/10/2014 13:47",
 		"processInput" : "Richo 7/28/2014 15:54",
@@ -21,4 +22,5 @@
 		"startStepping" : "Richo 7/2/2014 18:10",
 		"step" : "Richo 7/2/2014 18:11",
 		"stepTime" : "Richo 7/2/2014 18:11",
-		"stopStepping" : "Richo 11/19/2013 17:07" } }
+		"stopStepping" : "Richo 11/19/2013 17:07",
+		"validPins" : "Richo 7/28/2014 16:15" } }

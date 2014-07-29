@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Etoys",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"pic" ],
+	"name" : "MendietaMorph",
+	"pools" : [
+		 ],
+	"super" : "Morph",
+	"type" : "normal" }
