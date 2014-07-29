@@ -11,6 +11,7 @@ void executePinMode(void);
 void executeServoPWM(void);
 WORD_VAL ReadADC(short);
 void sendAnalogInputs(void);
+void handleTMR0Interrupt(void);
 
 #pragma code HIGH_INTERRUPT_VECTOR = 0x08
 void High_ISR (void)	{
@@ -27,12 +28,13 @@ void Low_ISR (void){
 #define start_TMR0 T0CONbits.TMR0ON=1;
 
 
-#define SERVO_LINE LATBbits.LATB0
+#define SERVO_0		 LATBbits.LATB0
+#define SERVO_1		 LATBbits.LATB1
 
-UINT16 pulse = 1500;
-UINT16 TMR0_ini;
+UINT16 servo_pulse[2] = {0, 0};
+UINT16 servo_lastp[2] = {0, 0};
+BYTE servo_active = 0;
 
-int counter = 0;
 
 #pragma interrupt YourHighPriorityISRCode
 void YourHighPriorityISRCode(){
@@ -47,32 +49,63 @@ void YourHighPriorityISRCode(){
 		counter++;
 		if (counter >= 45)
 		{
-			SERVO_LINE = 1 - SERVO_LINE;
+			SERVO_0 = 1 - SERVO_0;
 			counter = 0;
 		}
 		*/
-
-		SERVO_LINE = 1 - SERVO_LINE;
-		if (SERVO_LINE)
-		{
-			TMR0_ini = 65536 - (UINT16)(pulse * 3);
-		}
-		else 
-		{
-			TMR0_ini = (65536 - 60000) + (UINT16)(pulse * 3);
-		}
-		set_TMR0(TMR0_ini);
-
-		TMR0_flag=0;
-		
+		handleTMR0Interrupt();
+		TMR0_flag=0;		
 	}
 }
 #pragma interruptlow YourLowPriorityISRCode
-void YourLowPriorityISRCode(){
-	
-}
-
+void YourLowPriorityISRCode(){}
 #pragma code
+
+void handleTMR0Interrupt(void)
+{
+	UINT16 TMR0_ini;
+	switch(servo_active)
+	{
+		case 0:
+			SERVO_0 = 1 - SERVO_0;
+			if (SERVO_0)
+			{
+				servo_lastp[0] = servo_pulse[0];
+				TMR0_ini = 65536 - (UINT16)(servo_pulse[0] * 3);
+			}
+			else 
+			{
+				TMR0_ini = 65536 - 7500 + (UINT16)(servo_lastp[0] * 3);
+				servo_active = (servo_active + 1) % 8;
+			}
+			break;
+		case 1:
+			SERVO_1 = 1 - SERVO_1;
+			if (SERVO_1)
+			{
+				servo_lastp[1] = servo_pulse[1];
+				TMR0_ini = 65536 - (UINT16)(servo_pulse[1] * 3);
+			}
+			else 
+			{
+				TMR0_ini = 65536 - 7500 + (UINT16)(servo_lastp[1] * 3);
+				servo_active = (servo_active + 1) % 8;
+			}
+			break;
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+			TMR0_ini = 65536 - 7500;
+			servo_active = (servo_active + 1) % 8;
+			break;
+		default:
+			break;
+	}
+	set_TMR0(TMR0_ini);
+}
 
 int tick = 0;
 
@@ -463,6 +496,8 @@ void executePinMode(void)
 		case 40:
 			TRISBbits.RB7 = value;
 			break;
+		default: // Invalid pin
+			break;
 	}
 }
 
@@ -575,5 +610,19 @@ void executeServoPWM(void)
 	int pin = ReceivedDataBuffer[1];
 	int valueL = ReceivedDataBuffer[2];
 	int valueH = ReceivedDataBuffer[3];
-	pulse = (UINT16)valueL | ((UINT16)valueH << 8);
+
+	UINT16 value = (UINT16)valueL | ((UINT16)valueH << 8);
+	
+	switch(pin)
+	{
+		case 33:
+			servo_pulse[0] = value;
+			break;
+		case 34:
+			servo_pulse[1] = value;
+			break;
+		default: // Invalid pin
+			break;
+	}
+
 }
