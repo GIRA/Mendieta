@@ -2,4 +2,6 @@
 	"class" : {
 		 },
 	"instance" : {
-		 } }
+		"connect" : "Richo 7/30/2014 17:38",
+		"disconnect" : "Richo 7/30/2014 17:38",
+		"getIsConnected" : "Richo 7/30/2014 17:38" } }

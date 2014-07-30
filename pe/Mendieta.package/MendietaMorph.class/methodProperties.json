@@ -1,5 +1,20 @@
 {
 	"class" : {
-		 },
+		"additionsToViewerCategories" : "Richo 7/30/2014 17:56" },
 	"instance" : {
-		 } }
+		"buildAnalogPins" : "Richo 7/30/2014 17:30",
+		"buildDigitalPins" : "Richo 7/30/2014 17:30",
+		"buildL293D" : "Richo 7/30/2014 16:37",
+		"buildPIC" : "Richo 7/30/2014 16:37",
+		"buildSubmorphs" : "Richo 7/30/2014 16:47",
+		"buildUSB" : "Richo 7/30/2014 16:36",
+		"categoriesForViewer" : "Richo 7/30/2014 17:39",
+		"connect" : "Richo 7/30/2014 17:41",
+		"delete" : "Richo 7/30/2014 17:39",
+		"disconnect" : "Richo 7/30/2014 17:41",
+		"drawOn:" : "Richo 7/30/2014 17:19",
+		"initialize" : "Richo 7/30/2014 17:27",
+		"isConnected" : "Richo 7/30/2014 17:41",
+		"newPlayerInstance" : "Richo 7/30/2014 17:39",
+		"prepareToBeSaved" : "Richo 7/30/2014 17:39",
+		"validCategories" : "Richo 7/30/2014 17:40" } }

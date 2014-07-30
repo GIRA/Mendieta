@@ -1,0 +1,17 @@
+{
+	"category" : "Mendieta-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"pins",
+		"device",
+		"process",
+		"pinModes" ],
+	"name" : "MendietaProtocol",
+	"pools" : [
+		 ],
+	"super" : "ArduinoProtocol",
+	"type" : "normal" }

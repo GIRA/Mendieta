@@ -6,10 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"pic",
-		"form" ],
-	"name" : "MendietaMorph",
+		 ],
+	"name" : "MendietaDigitalPinMorph",
 	"pools" : [
 		 ],
-	"super" : "Morph",
+	"super" : "MendietaPinMorph",
 	"type" : "normal" }

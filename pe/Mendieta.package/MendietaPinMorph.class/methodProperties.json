@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"devices" : "Richo 7/30/2014 17:25",
+		"on:" : "Richo 7/30/2014 17:26" },
+	"instance" : {
+		"attachNewDevice" : "Richo 7/30/2014 17:35",
+		"attach:" : "Richo 7/30/2014 17:46",
+		"controlDeviceBounds:" : "Richo 7/30/2014 17:33",
+		"initialize" : "Richo 7/30/2014 17:22",
+		"initializeAttachmentPoint" : "Richo 7/30/2014 17:23",
+		"initializeEventHandling" : "Richo 7/30/2014 16:54",
+		"initializeWith:" : "Richo 7/30/2014 17:26",
+		"mouseDown:forMorph:" : "Richo 7/30/2014 17:23",
+		"mouseEnter:forMorph:" : "Richo 7/30/2014 16:54",
+		"mouseLeave:forMorph:" : "Richo 7/30/2014 16:54",
+		"move:" : "Richo 7/30/2014 17:25",
+		"newDevice" : "Richo 7/30/2014 17:24" } }

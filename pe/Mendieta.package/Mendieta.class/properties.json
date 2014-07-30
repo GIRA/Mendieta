@@ -1,15 +1,14 @@
 {
-	"category" : "Mendieta-Etoys",
+	"category" : "Mendieta-Core",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"pic",
-		"form" ],
-	"name" : "MendietaMorph",
+		 ],
+	"name" : "Mendieta",
 	"pools" : [
 		 ],
-	"super" : "Morph",
+	"super" : "Arduino",
 	"type" : "normal" }

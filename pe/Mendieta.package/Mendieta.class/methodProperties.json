@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"buttonExample" : "Richo 7/30/2014 15:59",
+		"defaultProtocol" : "Richo 7/30/2014 15:58" },
+	"instance" : {
+		"connect" : "Richo 7/30/2014 15:54",
+		"connectOnPort:" : "Richo 7/30/2014 15:53",
+		"connectOnPort:boardType:" : "Richo 7/30/2014 15:54",
+		"disconnect" : "Richo 7/30/2014 15:55",
+		"initialize" : "Richo 7/30/2014 15:52",
+		"isAnalog:" : "Richo 7/30/2014 15:56",
+		"isDigital:" : "Richo 7/30/2014 15:56",
+		"pin:" : "Richo 7/30/2014 15:56",
+		"reconfigurePins" : "Richo 7/30/2014 15:53" } }

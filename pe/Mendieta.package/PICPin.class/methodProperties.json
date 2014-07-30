@@ -2,13 +2,15 @@
 	"class" : {
 		"on:number:" : "Richo 7/2/2014 16:30" },
 	"instance" : {
+		"activate" : "Richo 7/30/2014 17:50",
+		"configure:" : "Richo 7/30/2014 17:48",
 		"initialize" : "Richo 7/2/2014 16:43",
 		"initializeWith:number:" : "Richo 7/2/2014 16:42",
 		"isAnalog" : "Richo 7/2/2014 16:44",
 		"isDigital" : "Richo 7/2/2014 16:44",
 		"isInvalid" : "Richo 7/2/2014 16:44",
 		"mode" : "Richo 7/2/2014 15:23",
-		"mode:" : "Richo 7/2/2014 17:00",
+		"mode:" : "Richo 7/30/2014 17:43",
 		"printOn:" : "Richo 7/2/2014 16:48",
 		"setInput" : "Richo 7/2/2014 18:08",
 		"setOutput" : "Richo 7/2/2014 18:08",

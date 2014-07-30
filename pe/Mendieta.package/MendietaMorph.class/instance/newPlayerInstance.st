@@ -1,0 +1,3 @@
+initialize-release
+newPlayerInstance
+	^ MendietaPlayer newUserInstance

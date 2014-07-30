@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"pic",
-		"form" ],
-	"name" : "MendietaMorph",
+		"attachmentPoint",
+		"pin" ],
+	"name" : "MendietaPinMorph",
 	"pools" : [
 		 ],
 	"super" : "Morph",
