@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Tue Jul 29 18:01:15 2014
+Linker Map File - Created Thu Jul 31 15:52:38 2014
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -21,16 +21,16 @@ Linker Map File - Created Tue Jul 29 18:01:15 2014
          .idata_c018i.o_i    romdata   0x00000e    program   0x000000
      LOW_INTERRUPT_VECTOR       code   0x000018    program   0x000006
                    .cinit    romdata   0x00001e    program   0x00000e
-             .code_main.o       code   0x00002c    program   0x0011be
-       .code_usb_device.o       code   0x0011ea    program   0x001094
- .code_usb_function_hid.o       code   0x00227e    program   0x0000ec
-.romdata_usb_descriptors.o    romdata   0x00236a    program   0x0000c6
-               _cinit_scn       code   0x002430    program   0x00009e
-                   STRING       code   0x0024ce    program   0x000034
-             D10KTCYXCODE       code   0x002502    program   0x00002e
-                    .code       code   0x002530    program   0x000020
-             _startup_scn       code   0x002550    program   0x00001c
-          .idata_main.o_i    romdata   0x00256c    program   0x000014
+             .code_main.o       code   0x00002c    program   0x001260
+       .code_usb_device.o       code   0x00128c    program   0x001094
+ .code_usb_function_hid.o       code   0x002320    program   0x0000ec
+.romdata_usb_descriptors.o    romdata   0x00240c    program   0x0000c6
+               _cinit_scn       code   0x0024d2    program   0x00009e
+                   STRING       code   0x002570    program   0x000034
+             D10KTCYXCODE       code   0x0025a4    program   0x00002e
+                    .code       code   0x0025d2    program   0x000020
+             _startup_scn       code   0x0025f2    program   0x00001c
+          .idata_main.o_i    romdata   0x00260e    program   0x000016
     .config_300000_main.o    romdata   0x300000    program   0x000001
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
@@ -51,17 +51,17 @@ Linker Map File - Created Tue Jul 29 18:01:15 2014
                   USB_BDT      udata   0x000400       data   0x000036
             USB_VARIABLES      udata   0x000500       data   0x000080
       .udata_usb_device.o      udata   0x000580       data   0x000025
-            .idata_main.o      idata   0x0005a5       data   0x000014
-           .udata_c018i.o      udata   0x0005b9       data   0x00000a
-.udata_usb_function_hid.o      udata   0x0005c3       data   0x000003
-            .udata_main.o      udata   0x0005c6       data   0x000002
- .udata_usb_descriptors.o      udata   0x0005c8       data   0x000000
- .idata_usb_descriptors.o      idata   0x0005c8       data   0x000000
-      .idata_usb_device.o      idata   0x0005c8       data   0x000000
-.idata_usb_function_hid.o      idata   0x0005c8       data   0x000000
-           .idata_c018i.o      idata   0x0005c8       data   0x000000
-          .udata___init.o      udata   0x0005c8       data   0x000000
-          .idata___init.o      idata   0x0005c8       data   0x000000
+            .idata_main.o      idata   0x0005a5       data   0x000016
+           .udata_c018i.o      udata   0x0005bb       data   0x00000a
+.udata_usb_function_hid.o      udata   0x0005c5       data   0x000003
+            .udata_main.o      udata   0x0005c8       data   0x000002
+ .udata_usb_descriptors.o      udata   0x0005ca       data   0x000000
+ .idata_usb_descriptors.o      idata   0x0005ca       data   0x000000
+      .idata_usb_device.o      idata   0x0005ca       data   0x000000
+.idata_usb_function_hid.o      idata   0x0005ca       data   0x000000
+           .idata_c018i.o      idata   0x0005ca       data   0x000000
+          .udata___init.o      udata   0x0005ca       data   0x000000
+          .idata___init.o      idata   0x0005ca       data   0x000000
             SFR_UNBANKED0      udata   0x000f62       data   0x00009e
 
 
@@ -70,11 +70,11 @@ Linker Map File - Created Tue Jul 29 18:01:15 2014
                                Start         End      
                            ---------   ---------      
                             0x000000    0x00000d      
-                            0x000018    0x00257f      
+                            0x000018    0x002623      
                             0x300000    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            9602 out of 33048 program addresses used, program memory utilization is 29%
+            9766 out of 33048 program addresses used, program memory utilization is 29%
 
 
 
@@ -82,17 +82,17 @@ Linker Map File - Created Tue Jul 29 18:01:15 2014
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
            BlinkUSBStatus   0x000218    program     extern C:\Mendieta\git\firmware\USB_HID.h
-                   D10K_1   0x00250e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x00251a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x00250c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-             Delay10KTCYx   0x002502    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-      HIDGetReportHandler   0x002366    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-      HIDSetReportHandler   0x002368    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+                   D10K_1   0x0025b0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x0025bc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x0025ae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+             Delay10KTCYx   0x0025a4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+      HIDGetReportHandler   0x002408    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+      HIDSetReportHandler   0x00240a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
                  High_ISR   0x000008    program     extern C:\Mendieta\git\firmware\main.c
          InitializeSystem   0x00002c    program     static C:\Mendieta\git\firmware\USB_HID.h
                   Low_ISR   0x000018    program     extern C:\Mendieta\git\firmware\main.c
                 ProcessIO   0x00004a    program     extern C:\Mendieta\git\firmware\USB_HID.h
-                  ReadADC   0x00065a    program     extern C:\Mendieta\git\firmware\main.c
+                  ReadADC   0x000682    program     extern C:\Mendieta\git\firmware\main.c
                   ReadPOT   0x0001ca    program     extern C:\Mendieta\git\firmware\USB_HID.h
        USBCBCheckOtherReq   0x0002ac    program     extern C:\Mendieta\git\firmware\USB_HID.h
         USBCBErrorHandler   0x0002aa    program     extern C:\Mendieta\git\firmware\USB_HID.h
@@ -102,40 +102,40 @@ Linker Map File - Created Tue Jul 29 18:01:15 2014
              USBCBSuspend   0x0002a4    program     extern C:\Mendieta\git\firmware\USB_HID.h
      USBCBWakeFromSuspend   0x0002a6    program     extern C:\Mendieta\git\firmware\USB_HID.h
         USBCB_SOF_Handler   0x0002a8    program     extern C:\Mendieta\git\firmware\USB_HID.h
-       USBCheckHIDRequest   0x00227e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-       USBCheckStdRequest   0x00178e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-    USBClearInterruptFlag   0x002246    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBConfigureEndpoint   0x001f34    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-         USBCtrlEPService   0x00150c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
- USBCtrlEPServiceComplete   0x001ae6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfInHandler   0x0015b8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBCtrlTrfOutHandler   0x0015a6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfRxService   0x001da0    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-   USBCtrlTrfSetupHandler   0x001560    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfTxService   0x001c8a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-            USBDeviceInit   0x0011ea    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-           USBDeviceTasks   0x001296    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-        USBEnableEndpoint   0x002008    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-         USBStallEndpoint   0x002074    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-          USBStallHandler   0x001450    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-  USBStdFeatureReqHandler   0x001856    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBStdGetDscHandler   0x001970    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-   USBStdGetStatusHandler   0x001a24    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBStdSetCfgHandler   0x001ec2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-               USBSuspend   0x001496    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBTransferOnePacket   0x002154    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-       USBWakeFromSuspend   0x0014ce    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-               USB_CD_Ptr   0x002428    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-               USB_SD_Ptr   0x00242a    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+       USBCheckHIDRequest   0x002320    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+       USBCheckStdRequest   0x001830    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+    USBClearInterruptFlag   0x0022e8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBConfigureEndpoint   0x001fd6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+         USBCtrlEPService   0x0015ae    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+ USBCtrlEPServiceComplete   0x001b88    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfInHandler   0x00165a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBCtrlTrfOutHandler   0x001648    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfRxService   0x001e42    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+   USBCtrlTrfSetupHandler   0x001602    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfTxService   0x001d2c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+            USBDeviceInit   0x00128c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+           USBDeviceTasks   0x001338    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+        USBEnableEndpoint   0x0020aa    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+USBPrepareForNextSetupTrf   0x0016f4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+         USBStallEndpoint   0x002116    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+          USBStallHandler   0x0014f2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+  USBStdFeatureReqHandler   0x0018f8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBStdGetDscHandler   0x001a12    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+   USBStdGetStatusHandler   0x001ac6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBStdSetCfgHandler   0x001f64    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+               USBSuspend   0x001538    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBTransferOnePacket   0x0021f6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+       USBWakeFromSuspend   0x001570    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+               USB_CD_Ptr   0x0024ca    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+               USB_SD_Ptr   0x0024cc    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
 USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git\firmware\USB_HID.h
                  UserInit   0x000030    program     extern C:\Mendieta\git\firmware\USB_HID.h
   YourHighPriorityISRCode   0x00039c    program     extern C:\Mendieta\git\firmware\main.c
    YourLowPriorityISRCode   0x000436    program     extern C:\Mendieta\git\firmware\main.c
-              _2jContinue   0x0024ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                   _3jEnd   0x0024f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-       _D10KTCYXCODE_0010   0x002512    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x00251e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+              _2jContinue   0x002590    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                   _3jEnd   0x00259a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+       _D10KTCYXCODE_0010   0x0025b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x0025c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
        ___case_1_lbl00070   0x00038a    program     static                          
       ___case_21_lbl00063   0x00036e    program     static                          
       ___case_22_lbl00064   0x000372    program     static                          
@@ -146,8 +146,8 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git
    ___case_65535_lbl00069   0x000386    program     static                          
       ___default_lbl00071   0x00038e    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x00256a    program     static                          
-       ___return_lbl00002   0x0024cc    program     static                          
+       ___return_lbl00001   0x00260c    program     static                          
+       ___return_lbl00002   0x00256e    program     static                          
        ___return_lbl00061   0x000394    program     static                          
        ___return_lbl00072   0x00000c    program     static                          
        ___return_lbl00073   0x00001c    program     static                          
@@ -173,40 +173,41 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git
                __tmplbl_7   0x000356    program     static                          
                __tmplbl_8   0x000360    program     static                          
                __tmplbl_9   0x00036a    program     static                          
-            __zero_memory   0x002530    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                _do_cinit   0x002430    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x0025d2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                _do_cinit   0x0024d2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x002550    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x002546    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-        configDescriptor1   0x00237c    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                copy_loop   0x0024a2    program     static                          
-            copy_one_byte   0x0024a8    program     static                          
-                    delay   0x00060c    program     extern C:\Mendieta\git\firmware\main.c
-               device_dsc   0x00236a    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                     done   0x0024cc    program     static                          
-             done_copying   0x0024b6    program     static                          
-      executeDigitalWrite   0x000804    program     extern C:\Mendieta\git\firmware\main.c
-           executePinMode   0x000bb0    program     extern C:\Mendieta\git\firmware\main.c
-          executeServoPWM   0x00112a    program     extern C:\Mendieta\git\firmware\main.c
+                 _startup   0x0025f2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x0025e8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+        configDescriptor1   0x00241e    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                copy_loop   0x002544    program     static                          
+            copy_one_byte   0x00254a    program     static                          
+                    delay   0x000634    program     extern C:\Mendieta\git\firmware\main.c
+               device_dsc   0x00240c    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                     done   0x00256e    program     static                          
+             done_copying   0x002558    program     static                          
+     executeActivateServo   0x00121c    program     extern C:\Mendieta\git\firmware\main.c
+      executeDigitalWrite   0x000836    program     extern C:\Mendieta\git\firmware\main.c
+           executePinMode   0x000be2    program     extern C:\Mendieta\git\firmware\main.c
+          executeServoPWM   0x00115c    program     extern C:\Mendieta\git\firmware\main.c
       handleTMR0Interrupt   0x00045c    program     extern C:\Mendieta\git\firmware\main.c
-                hid_rpt01   0x00240b    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                     jEnd   0x002500    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                    jLoop   0x0024e2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                     loop   0x0006e8    program     extern C:\Mendieta\git\firmware\main.c
-                     loop   0x002560    program     static                          
-                   loop_h   0x00253e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   loop_l   0x002548    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     main   0x0006c0    program     extern C:\Mendieta\git\firmware\main.c
-                   memset   0x0024ce    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-       processUsbCommands   0x00078a    program     extern C:\Mendieta\git\firmware\main.c
-                    sd000   0x0023a5    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd001   0x0023a9    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd002   0x0023dd    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                     send   0x0006ec    program     extern C:\Mendieta\git\firmware\main.c
-         sendAnalogInputs   0x000f36    program     extern C:\Mendieta\git\firmware\main.c
-                    setup   0x0006d6    program     extern C:\Mendieta\git\firmware\main.c
-                     test   0x00244a    program     static                          
-               zero_block   0x00253e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                hid_rpt01   0x0024ad    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                     jEnd   0x0025a2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                    jLoop   0x002584    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                     loop   0x000710    program     extern C:\Mendieta\git\firmware\main.c
+                     loop   0x002602    program     static                          
+                   loop_h   0x0025e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   loop_l   0x0025ea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     main   0x0006e8    program     extern C:\Mendieta\git\firmware\main.c
+                   memset   0x002570    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+       processUsbCommands   0x0007b2    program     extern C:\Mendieta\git\firmware\main.c
+                    sd000   0x002447    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd001   0x00244b    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd002   0x00247f    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                     send   0x000714    program     extern C:\Mendieta\git\firmware\main.c
+         sendAnalogInputs   0x000f68    program     extern C:\Mendieta\git\firmware\main.c
+                    setup   0x0006fe    program     extern C:\Mendieta\git\firmware\main.c
+                     test   0x0024ec    program     static                          
+               zero_block   0x0025e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
@@ -491,19 +492,19 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git
                   __REMB3   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __tmp_0   0x00000b       data     static C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
                   __tmp_0   0x00000b       data     static C:\Mendieta\git\firmware\main.c
-          active_protocol   0x0005c4       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+          active_protocol   0x0005c6       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
          blinkStatusValid   0x0005a9       data     extern C:\Mendieta\git\firmware\USB_HID.h
      controlTransferState   0x000590       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-                curr_byte   0x0005bc       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x0005be       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x0005c0       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-              delay_count   0x0005c6       data     static C:\Mendieta\git\firmware\USB_HID.h
+                curr_byte   0x0005be       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x0005c0       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x0005c2       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+              delay_count   0x0005c8       data     static C:\Mendieta\git\firmware\USB_HID.h
             hid_report_in   0x000433       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
            hid_report_out   0x000430       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-           hid_rpt_rx_len   0x0005c5       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-                idle_rate   0x0005c3       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+           hid_rpt_rx_len   0x0005c7       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+                idle_rate   0x0005c5       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
                   inPipes   0x000591       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-             lastSendTime   0x0005b7       data     extern C:\Mendieta\git\firmware\main.c
+             lastSendTime   0x0005b9       data     extern C:\Mendieta\git\firmware\main.c
                 led_count   0x0005aa       data     static C:\Mendieta\git\firmware\USB_HID.h
                  outPipes   0x000596       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
    pBDTEntryEP0OutCurrent   0x000583       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
@@ -511,12 +512,13 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git
               pBDTEntryIn   0x00058b       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
              pBDTEntryOut   0x000587       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
                      pDst   0x00059d       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-                     prom   0x0005b9       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     prom   0x0005bb       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
              servo_active   0x0005b4       data     extern C:\Mendieta\git\firmware\main.c
+            servo_current   0x0005b6       data     extern C:\Mendieta\git\firmware\main.c
               servo_lastp   0x0005b0       data     extern C:\Mendieta\git\firmware\main.c
               servo_pulse   0x0005ac       data     extern C:\Mendieta\git\firmware\main.c
         shortPacketStatus   0x00058f       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-                     tick   0x0005b5       data     extern C:\Mendieta\git\firmware\main.c
+                     tick   0x0005b7       data     extern C:\Mendieta\git\firmware\main.c
 
 
 
@@ -566,77 +568,78 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git
   YourHighPriorityISRCode   0x00039c    program     extern C:\Mendieta\git\firmware\main.c
    YourLowPriorityISRCode   0x000436    program     extern C:\Mendieta\git\firmware\main.c
       handleTMR0Interrupt   0x00045c    program     extern C:\Mendieta\git\firmware\main.c
-                    delay   0x00060c    program     extern C:\Mendieta\git\firmware\main.c
-                  ReadADC   0x00065a    program     extern C:\Mendieta\git\firmware\main.c
-                     main   0x0006c0    program     extern C:\Mendieta\git\firmware\main.c
-                    setup   0x0006d6    program     extern C:\Mendieta\git\firmware\main.c
-                     loop   0x0006e8    program     extern C:\Mendieta\git\firmware\main.c
-                     send   0x0006ec    program     extern C:\Mendieta\git\firmware\main.c
-       processUsbCommands   0x00078a    program     extern C:\Mendieta\git\firmware\main.c
-      executeDigitalWrite   0x000804    program     extern C:\Mendieta\git\firmware\main.c
-           executePinMode   0x000bb0    program     extern C:\Mendieta\git\firmware\main.c
-         sendAnalogInputs   0x000f36    program     extern C:\Mendieta\git\firmware\main.c
-          executeServoPWM   0x00112a    program     extern C:\Mendieta\git\firmware\main.c
-            USBDeviceInit   0x0011ea    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-           USBDeviceTasks   0x001296    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-          USBStallHandler   0x001450    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-               USBSuspend   0x001496    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-       USBWakeFromSuspend   0x0014ce    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-         USBCtrlEPService   0x00150c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-   USBCtrlTrfSetupHandler   0x001560    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBCtrlTrfOutHandler   0x0015a6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfInHandler   0x0015b8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-       USBCheckStdRequest   0x00178e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-  USBStdFeatureReqHandler   0x001856    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBStdGetDscHandler   0x001970    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-   USBStdGetStatusHandler   0x001a24    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
- USBCtrlEPServiceComplete   0x001ae6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfTxService   0x001c8a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfRxService   0x001da0    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBStdSetCfgHandler   0x001ec2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBConfigureEndpoint   0x001f34    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-        USBEnableEndpoint   0x002008    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-         USBStallEndpoint   0x002074    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBTransferOnePacket   0x002154    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-    USBClearInterruptFlag   0x002246    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-       USBCheckHIDRequest   0x00227e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-      HIDGetReportHandler   0x002366    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-      HIDSetReportHandler   0x002368    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-               device_dsc   0x00236a    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-        configDescriptor1   0x00237c    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd000   0x0023a5    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd001   0x0023a9    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd002   0x0023dd    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                hid_rpt01   0x00240b    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-               USB_CD_Ptr   0x002428    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-               USB_SD_Ptr   0x00242a    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                _do_cinit   0x002430    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x00244a    program     static                          
-                copy_loop   0x0024a2    program     static                          
-            copy_one_byte   0x0024a8    program     static                          
-             done_copying   0x0024b6    program     static                          
-       ___return_lbl00002   0x0024cc    program     static                          
-                     done   0x0024cc    program     static                          
-                   memset   0x0024ce    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                    jLoop   0x0024e2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-              _2jContinue   0x0024ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                   _3jEnd   0x0024f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                     jEnd   0x002500    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-             Delay10KTCYx   0x002502    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x00250c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                   D10K_1   0x00250e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0010   0x002512    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x00251a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x00251e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-            __zero_memory   0x002530    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   loop_h   0x00253e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-               zero_block   0x00253e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                compare_l   0x002546    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   loop_l   0x002548    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 _startup   0x002550    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x002560    program     static                          
-       ___return_lbl00001   0x00256a    program     static                          
+                    delay   0x000634    program     extern C:\Mendieta\git\firmware\main.c
+                  ReadADC   0x000682    program     extern C:\Mendieta\git\firmware\main.c
+                     main   0x0006e8    program     extern C:\Mendieta\git\firmware\main.c
+                    setup   0x0006fe    program     extern C:\Mendieta\git\firmware\main.c
+                     loop   0x000710    program     extern C:\Mendieta\git\firmware\main.c
+                     send   0x000714    program     extern C:\Mendieta\git\firmware\main.c
+       processUsbCommands   0x0007b2    program     extern C:\Mendieta\git\firmware\main.c
+      executeDigitalWrite   0x000836    program     extern C:\Mendieta\git\firmware\main.c
+           executePinMode   0x000be2    program     extern C:\Mendieta\git\firmware\main.c
+         sendAnalogInputs   0x000f68    program     extern C:\Mendieta\git\firmware\main.c
+          executeServoPWM   0x00115c    program     extern C:\Mendieta\git\firmware\main.c
+     executeActivateServo   0x00121c    program     extern C:\Mendieta\git\firmware\main.c
+            USBDeviceInit   0x00128c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+           USBDeviceTasks   0x001338    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+          USBStallHandler   0x0014f2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+               USBSuspend   0x001538    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+       USBWakeFromSuspend   0x001570    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+         USBCtrlEPService   0x0015ae    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+   USBCtrlTrfSetupHandler   0x001602    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBCtrlTrfOutHandler   0x001648    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfInHandler   0x00165a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+USBPrepareForNextSetupTrf   0x0016f4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+       USBCheckStdRequest   0x001830    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+  USBStdFeatureReqHandler   0x0018f8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBStdGetDscHandler   0x001a12    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+   USBStdGetStatusHandler   0x001ac6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+ USBCtrlEPServiceComplete   0x001b88    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfTxService   0x001d2c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfRxService   0x001e42    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBStdSetCfgHandler   0x001f64    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBConfigureEndpoint   0x001fd6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+        USBEnableEndpoint   0x0020aa    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+         USBStallEndpoint   0x002116    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBTransferOnePacket   0x0021f6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+    USBClearInterruptFlag   0x0022e8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+       USBCheckHIDRequest   0x002320    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+      HIDGetReportHandler   0x002408    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+      HIDSetReportHandler   0x00240a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+               device_dsc   0x00240c    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+        configDescriptor1   0x00241e    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd000   0x002447    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd001   0x00244b    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd002   0x00247f    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                hid_rpt01   0x0024ad    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+               USB_CD_Ptr   0x0024ca    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+               USB_SD_Ptr   0x0024cc    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                _do_cinit   0x0024d2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x0024ec    program     static                          
+                copy_loop   0x002544    program     static                          
+            copy_one_byte   0x00254a    program     static                          
+             done_copying   0x002558    program     static                          
+       ___return_lbl00002   0x00256e    program     static                          
+                     done   0x00256e    program     static                          
+                   memset   0x002570    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                    jLoop   0x002584    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+              _2jContinue   0x002590    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                   _3jEnd   0x00259a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                     jEnd   0x0025a2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+             Delay10KTCYx   0x0025a4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x0025ae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x0025b0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0010   0x0025b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x0025bc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x0025c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+            __zero_memory   0x0025d2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   loop_h   0x0025e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+               zero_block   0x0025e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                compare_l   0x0025e8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   loop_l   0x0025ea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 _startup   0x0025f2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x002602    program     static                          
+       ___return_lbl00001   0x00260c    program     static                          
                __config_0   0x300000    program     static C:\Mendieta\git\firmware\main.c
                __config_1   0x300001    program     static C:\Mendieta\git\firmware\main.c
                __config_2   0x300002    program     static C:\Mendieta\git\firmware\main.c
@@ -649,10 +652,10 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
                __config_9   0x30000b    program     static C:\Mendieta\git\firmware\main.c
               __config_10   0x30000c    program     static C:\Mendieta\git\firmware\main.c
               __config_11   0x30000d    program     static C:\Mendieta\git\firmware\main.c
-                 __AARGB7   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB3   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
-                 __AARGB6   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
+                 __AARGB7   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB2   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
+                 __AARGB6   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB5   0x000002       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB1   0x000002       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB4   0x000003       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
@@ -663,10 +666,10 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
                  __AARGB0   0x000007       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                    __AEXP   0x000008       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                      SIGN   0x000009       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-            __FPFLAGSbits   0x00000a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x00000a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-                  __tmp_0   0x00000b       data     static C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+            __FPFLAGSbits   0x00000a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                   __tmp_0   0x00000b       data     static C:\Mendieta\git\firmware\main.c
+                  __tmp_0   0x00000b       data     static C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
             DelayCounter2   0x000014       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\delayd2.asm
             DelayCounter1   0x000015       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\delayd1.asm
                       BDT   0x000400       data     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
@@ -699,82 +702,83 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
               servo_pulse   0x0005ac       data     extern C:\Mendieta\git\firmware\main.c
               servo_lastp   0x0005b0       data     extern C:\Mendieta\git\firmware\main.c
              servo_active   0x0005b4       data     extern C:\Mendieta\git\firmware\main.c
-                     tick   0x0005b5       data     extern C:\Mendieta\git\firmware\main.c
-             lastSendTime   0x0005b7       data     extern C:\Mendieta\git\firmware\main.c
-                     prom   0x0005b9       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                curr_byte   0x0005bc       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x0005be       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x0005c0       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                idle_rate   0x0005c3       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-          active_protocol   0x0005c4       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-           hid_rpt_rx_len   0x0005c5       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-              delay_count   0x0005c6       data     static C:\Mendieta\git\firmware\USB_HID.h
+            servo_current   0x0005b6       data     extern C:\Mendieta\git\firmware\main.c
+                     tick   0x0005b7       data     extern C:\Mendieta\git\firmware\main.c
+             lastSendTime   0x0005b9       data     extern C:\Mendieta\git\firmware\main.c
+                     prom   0x0005bb       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                curr_byte   0x0005be       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x0005c0       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x0005c2       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                idle_rate   0x0005c5       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+          active_protocol   0x0005c6       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+           hid_rpt_rx_len   0x0005c7       data     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+              delay_count   0x0005c8       data     static C:\Mendieta\git\firmware\USB_HID.h
                   SPPDATA   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-               SPPCFGbits   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    SPPCFG   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+               SPPCFGbits   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    SPPEPS   0x000f64       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                SPPEPSbits   0x000f64       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-               SPPCONbits   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    SPPCON   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                UFRMLbits   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                    UFRML   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+               SPPCONbits   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UFRM   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                UFRMHbits   0x000f67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                    UFRML   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                UFRMLbits   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     UFRMH   0x000f67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                UFRMHbits   0x000f67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   UIRbits   0x000f68       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                       UIR   0x000f68       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                  UIEbits   0x000f69       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                       UIE   0x000f69       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     UEIR   0x000f6a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                  UIEbits   0x000f69       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEIRbits   0x000f6a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     UEIR   0x000f6a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEIEbits   0x000f6b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UEIE   0x000f6b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                USTATbits   0x000f6c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     USTAT   0x000f6c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 UCONbits   0x000f6d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                USTATbits   0x000f6c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UCON   0x000f6d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 UCONbits   0x000f6d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 UADDRbits   0x000f6e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     UADDR   0x000f6e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 UCFGbits   0x000f6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UCFG   0x000f6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 UEP0bits   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 UCFGbits   0x000f6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UEP0   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 UEP0bits   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEP1bits   0x000f71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UEP1   0x000f71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     UEP2   0x000f72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEP2bits   0x000f72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     UEP3   0x000f73       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     UEP2   0x000f72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEP3bits   0x000f73       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     UEP3   0x000f73       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEP4bits   0x000f74       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UEP4   0x000f74       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEP5bits   0x000f75       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UEP5   0x000f75       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 UEP6bits   0x000f76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UEP6   0x000f76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 UEP6bits   0x000f76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEP7bits   0x000f77       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UEP7   0x000f77       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEP8bits   0x000f78       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      UEP8   0x000f78       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     UEP9   0x000f79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  UEP9bits   0x000f79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     UEP9   0x000f79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 UEP10bits   0x000f7a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     UEP10   0x000f7a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                UEP11bits   0x000f7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     UEP11   0x000f7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                UEP11bits   0x000f7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     UEP12   0x000f7c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 UEP12bits   0x000f7c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                UEP13bits   0x000f7d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     UEP13   0x000f7d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                UEP13bits   0x000f7d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 UEP14bits   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     UEP14   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 UEP15bits   0x000f7f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     UEP15   0x000f7f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     PORTA   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 PORTAbits   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                    PORTB   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 PORTBbits   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                PORTCbits   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                    PORTB   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     PORTC   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                PORTCbits   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 PORTDbits   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     PORTD   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 PORTEbits   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
@@ -789,73 +793,73 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
                  LATDbits   0x000f8c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      LATE   0x000f8d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  LATEbits   0x000f8d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                TRISAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     DDRA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TRISA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  DDRAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     DDRA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                TRISAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      DDRB   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 DDRBbits   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TRISB   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 TRISBbits   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                    TRISC   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                TRISCbits   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 DDRBbits   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  DDRCbits   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      DDRC   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 DDRDbits   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     DDRD   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                    TRISD   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                TRISCbits   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                    TRISC   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 TRISDbits   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                    TRISD   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     DDRD   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 DDRDbits   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      DDRE   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  DDREbits   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TRISE   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 TRISEbits   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-              OSCTUNEbits   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   OSCTUNE   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     PIE1   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+              OSCTUNEbits   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  PIE1bits   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     PIE1   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  PIR1bits   0x000f9e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      PIR1   0x000f9e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 IPR1bits   0x000f9f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      IPR1   0x000f9f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     PIE2   0x000fa0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 IPR1bits   0x000f9f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  PIE2bits   0x000fa0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 PIR2bits   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     PIE2   0x000fa0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      PIR2   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 IPR2bits   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 PIR2bits   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      IPR2   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 IPR2bits   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                EECON1bits   0x000fa6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    EECON1   0x000fa6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    EECON2   0x000fa7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    EEDATA   0x000fa8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     EEADR   0x000fa9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                    RCSTA   0x000fab       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 RCSTAbits   0x000fab       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                    RCSTA   0x000fab       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 TXSTAbits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TXSTA   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TXREG   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     RCREG   0x000fae       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     SPBRG   0x000faf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    SPBRGH   0x000fb0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                    T3CON   0x000fb1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 T3CONbits   0x000fb1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                    T3CON   0x000fb1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TMR3L   0x000fb2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TMR3H   0x000fb3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                CMCONbits   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     CMCON   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-               CVRCONbits   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                CMCONbits   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    CVRCON   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+               CVRCONbits   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                  ECCP1AS   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+              ECCP1ASbits   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    CCP1AS   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                CCP1ASbits   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-              ECCP1ASbits   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                  ECCP1AS   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                  ECCP1DEL   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
              ECCP1DELbits   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-              CCP1DELbits   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   CCP1DEL   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                  BAUDCON   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-              BAUDCONbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                  BAUDCTL   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+              CCP1DELbits   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
               BAUDCTLbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                  BAUDCTL   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+              BAUDCONbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                  BAUDCON   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
               CCP2CONbits   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   CCP2CON   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     CCPR2   0x000fbb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
@@ -863,8 +867,8 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
                    CCPR2H   0x000fbc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
               CCP1CONbits   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   CCP1CON   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 ECCP1CON   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
              ECCP1CONbits   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 ECCP1CON   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     CCPR1   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    CCPR1L   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    CCPR1H   0x000fbf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
@@ -881,8 +885,8 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
               SSPCON2bits   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   SSPCON1   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
               SSPCON1bits   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-              SSPSTATbits   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   SSPSTAT   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+              SSPSTATbits   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    SSPADD   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    SSPBUF   0x000fc9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 T2CONbits   0x000fca       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
@@ -897,20 +901,20 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
                  RCONbits   0x000fd0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                WDTCONbits   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    WDTCON   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                  HLVDCON   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-              HLVDCONbits   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   LVDCON   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                LVDCONbits   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   OSCCON   0x000fd3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   LVDCON   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+              HLVDCONbits   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                  HLVDCON   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                OSCCONbits   0x000fd3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   OSCCON   0x000fd3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                 T0CONbits   0x000fd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     T0CON   0x000fd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TMR0L   0x000fd6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     TMR0H   0x000fd7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   STATUS   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                STATUSbits   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                     FSR2   0x000fd9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   STATUS   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     FSR2L   0x000fd9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     FSR2   0x000fd9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     FSR2H   0x000fda       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    PLUSW2   0x000fdb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   PREINC2   0x000fdc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
@@ -927,8 +931,8 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
                  POSTINC1   0x000fe6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     INDF1   0x000fe7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      WREG   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                    FSR0L   0x000fe9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      FSR0   0x000fe9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                    FSR0L   0x000fe9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     FSR0H   0x000fea       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    PLUSW0   0x000feb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   PREINC0   0x000fec       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
@@ -939,22 +943,22 @@ USBPrepareForNextSetupTrf   0x001652    program     extern C:\Mendieta\git\firmw
                   INTCON3   0x000ff0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
               INTCON2bits   0x000ff1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   INTCON2   0x000ff1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   INTCON   0x000ff2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                INTCONbits   0x000ff2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   INTCON   0x000ff2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      PROD   0x000ff3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     PRODL   0x000ff3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                     PRODH   0x000ff4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    TABLAT   0x000ff5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                  TBLPTRL   0x000ff6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    TBLPTR   0x000ff6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                  TBLPTRL   0x000ff6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   TBLPTRH   0x000ff7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                   TBLPTRU   0x000ff8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                       PC   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                       PCL   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                       PC   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    PCLATH   0x000ffa       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    PCLATU   0x000ffb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-               STKPTRbits   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    STKPTR   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+               STKPTRbits   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                       TOS   0x000ffd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      TOSL   0x000ffd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      TOSH   0x000ffe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm

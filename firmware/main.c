@@ -9,6 +9,7 @@ void processUsbCommands(void);
 void executeDigitalWrite(void);
 void executePinMode(void);
 void executeServoPWM(void);
+void executeActivateServo(void);
 WORD_VAL ReadADC(short);
 void sendAnalogInputs(void);
 void handleTMR0Interrupt(void);
@@ -33,7 +34,9 @@ void Low_ISR (void){
 
 UINT16 servo_pulse[2] = {0, 0};
 UINT16 servo_lastp[2] = {0, 0};
-BYTE servo_active = 0;
+BYTE servo_active[2] = {0, 0};
+
+BYTE servo_current = 0;
 
 
 #pragma interrupt YourHighPriorityISRCode
@@ -64,32 +67,48 @@ void YourLowPriorityISRCode(){}
 void handleTMR0Interrupt(void)
 {
 	UINT16 TMR0_ini;
-	switch(servo_active)
+	switch(servo_current)
 	{
 		case 0:
-			SERVO_0 = 1 - SERVO_0;
-			if (SERVO_0)
+			if (servo_active[0] == 1)
 			{
-				servo_lastp[0] = servo_pulse[0];
-				TMR0_ini = 65536 - (UINT16)(servo_pulse[0] * 3);
+				SERVO_0 = 1 - SERVO_0;
+				if (SERVO_0)
+				{
+					servo_lastp[0] = servo_pulse[0];
+					TMR0_ini = 65536 - (UINT16)(servo_pulse[0] * 3);
+				}
+				else 
+				{
+					TMR0_ini = 65536 - 7500 + (UINT16)(servo_lastp[0] * 3);
+					servo_current = (servo_current + 1) % 8;
+				}
 			}
-			else 
+			else
 			{
-				TMR0_ini = 65536 - 7500 + (UINT16)(servo_lastp[0] * 3);
-				servo_active = (servo_active + 1) % 8;
-			}
+				TMR0_ini = 65536 - 7500;
+				servo_current = (servo_current + 1) % 8;
+			}			
 			break;
-		case 1:
-			SERVO_1 = 1 - SERVO_1;
-			if (SERVO_1)
+		case 1:			
+			if (servo_active[1] == 1)
 			{
-				servo_lastp[1] = servo_pulse[1];
-				TMR0_ini = 65536 - (UINT16)(servo_pulse[1] * 3);
+				SERVO_1 = 1 - SERVO_1;
+				if (SERVO_1)
+				{
+					servo_lastp[1] = servo_pulse[1];
+					TMR0_ini = 65536 - (UINT16)(servo_pulse[1] * 3);
+				}
+				else 
+				{
+					TMR0_ini = 65536 - 7500 + (UINT16)(servo_lastp[1] * 3);
+					servo_current = (servo_current + 1) % 8;
+				}
 			}
-			else 
-			{
-				TMR0_ini = 65536 - 7500 + (UINT16)(servo_lastp[1] * 3);
-				servo_active = (servo_active + 1) % 8;
+			else
+			{				
+				TMR0_ini = 65536 - 7500;
+				servo_current = (servo_current + 1) % 8;
 			}
 			break;
 		case 2:
@@ -99,7 +118,7 @@ void handleTMR0Interrupt(void)
 		case 6:
 		case 7:
 			TMR0_ini = 65536 - 7500;
-			servo_active = (servo_active + 1) % 8;
+			servo_current = (servo_current + 1) % 8;
 			break;
 		default:
 			break;
@@ -224,6 +243,9 @@ void processUsbCommands(void)
 				break;   	
 			case 0x02:  // RQ_SERVO_PWM (PIN, PULSE)
 				executeServoPWM();
+				break;
+			case 0x03:	// RQ_ACTIVATE_SERVO (PIN, ACTIVE)
+				executeActivateServo();
 				break;
             default:	// Unknown command received
            		break;
@@ -620,6 +642,25 @@ void executeServoPWM(void)
 			break;
 		case 34:
 			servo_pulse[1] = value;
+			break;
+		default: // Invalid pin
+			break;
+	}
+
+}
+
+void executeActivateServo(void)
+{
+	int pin = ReceivedDataBuffer[1];
+	int active = ReceivedDataBuffer[2];
+
+	switch(pin)
+	{
+		case 33:
+			servo_active[0] = active;
+			break;
+		case 34:
+			servo_active[1] = active;
 			break;
 		default: // Invalid pin
 			break;
