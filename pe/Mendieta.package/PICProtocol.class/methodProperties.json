@@ -1,6 +1,7 @@
 {
 	"class" : {
 		"initialize" : "Richo 8/22/2013 18:13",
+		"rqActivateServo" : "Richo 7/31/2014 15:56",
 		"rqDigitalWrite" : "Richo 8/22/2013 17:29",
 		"rqPinMode" : "Richo 6/25/2014 16:43",
 		"rqServoPWM" : "Richo 7/28/2014 16:53",
@@ -14,4 +15,5 @@
 		"pin:mode:" : "Richo 6/25/2014 16:37",
 		"receive" : "Richo 7/28/2014 15:54",
 		"send:" : "Richo 7/28/2014 15:52",
+		"servo:active:" : "Richo 7/31/2014 15:56",
 		"servo:pwm:" : "Richo 7/28/2014 17:04" } }

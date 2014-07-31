@@ -9,7 +9,8 @@
 		"pic",
 		"number",
 		"value",
-		"mode" ],
+		"mode",
+		"fork" ],
 	"name" : "PICPin",
 	"pools" : [
 		 ],
