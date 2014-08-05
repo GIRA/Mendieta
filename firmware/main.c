@@ -10,6 +10,7 @@ void executeDigitalWrite(void);
 void executePinMode(void);
 void executeServoPWM(void);
 void executeActivateServo(void);
+void executeContinuousServo(void);
 WORD_VAL ReadADC(short);
 void sendAnalogInputs(void);
 void handleTMR0Interrupt(void);
@@ -32,12 +33,19 @@ void Low_ISR (void){
 #define SERVO_0		 LATBbits.LATB0
 #define SERVO_1		 LATBbits.LATB1
 
+// NORMAL SERVOS
 UINT16 servo_pulse[2] = {0, 0};
 UINT16 servo_lastp[2] = {0, 0};
 BYTE servo_active[2] = {0, 0};
-
 BYTE servo_current = 0;
 
+// CONTINUOUS SERVOS
+SHORT servo_speed[2] = {0, 0};
+SHORT servo_wait[2] = {0, 0};
+SHORT servo_skip[2] = {0, 0};
+SHORT servo_cycles[2] = {0, 0};
+SHORT servo_skipped[2] = {0, 0};
+SHORT cycles = 2; // How many cycles the servo *must* perform
 
 #pragma interrupt YourHighPriorityISRCode
 void YourHighPriorityISRCode(){
@@ -64,52 +72,73 @@ void YourHighPriorityISRCode(){
 void YourLowPriorityISRCode(){}
 #pragma code
 
+UINT16 regularServo(int index)
+{
+	BYTE high = 0;
+	if (servo_active[index] == 1 
+		&& servo_wait[index] == 0
+		&& (servo_skip[index] == 0
+			|| (servo_skipped[index] == 0 
+				&& servo_cycles[index] < cycles)))
+	{
+		servo_cycles[index] = servo_cycles[index] + 1;
+		servo_skipped[index] = 0;
+		switch (index)
+		{
+			case 0: 
+				SERVO_0 = 1 - SERVO_0; 
+				high = SERVO_0; 
+				break;
+			case 1: 
+				SERVO_1 = 1 - SERVO_1; 
+				high = SERVO_1; 
+				break;
+			default: // Invalid servo
+				// Full cycle
+				return 65536 - 7500;
+		}
+		if (high)
+		{
+			servo_lastp[index] = servo_pulse[index];
+			return 65536 - (UINT16)(servo_pulse[index] * 3);
+		}
+		else 
+		{
+			servo_current = (servo_current + 1) % 8;
+			return 65536 - 7500 + (UINT16)(servo_lastp[index] * 3);			
+		}
+	}
+	else
+	{
+		if (servo_wait[index] > 0)
+		{
+			servo_wait[index] = servo_wait[index] - 1;
+		}
+
+		if (servo_skipped[index] < servo_skip[index])
+		{
+			servo_skipped[index] = servo_skipped[index] + 1;
+			servo_cycles[index] = 0;
+		}
+		else
+		{
+			servo_skipped[index] = 0;
+		}
+		servo_current = (servo_current + 1) % 8;
+		return 65536 - 7500;
+	}
+}
+
 void handleTMR0Interrupt(void)
 {
 	UINT16 TMR0_ini;
 	switch(servo_current)
 	{
 		case 0:
-			if (servo_active[0] == 1)
-			{
-				SERVO_0 = 1 - SERVO_0;
-				if (SERVO_0)
-				{
-					servo_lastp[0] = servo_pulse[0];
-					TMR0_ini = 65536 - (UINT16)(servo_pulse[0] * 3);
-				}
-				else 
-				{
-					TMR0_ini = 65536 - 7500 + (UINT16)(servo_lastp[0] * 3);
-					servo_current = (servo_current + 1) % 8;
-				}
-			}
-			else
-			{
-				TMR0_ini = 65536 - 7500;
-				servo_current = (servo_current + 1) % 8;
-			}			
+			TMR0_ini = regularServo(0);
 			break;
 		case 1:			
-			if (servo_active[1] == 1)
-			{
-				SERVO_1 = 1 - SERVO_1;
-				if (SERVO_1)
-				{
-					servo_lastp[1] = servo_pulse[1];
-					TMR0_ini = 65536 - (UINT16)(servo_pulse[1] * 3);
-				}
-				else 
-				{
-					TMR0_ini = 65536 - 7500 + (UINT16)(servo_lastp[1] * 3);
-					servo_current = (servo_current + 1) % 8;
-				}
-			}
-			else
-			{				
-				TMR0_ini = 65536 - 7500;
-				servo_current = (servo_current + 1) % 8;
-			}
+			TMR0_ini = regularServo(1);
 			break;
 		case 2:
 		case 3:
@@ -246,6 +275,9 @@ void processUsbCommands(void)
 				break;
 			case 0x03:	// RQ_ACTIVATE_SERVO (PIN, ACTIVE)
 				executeActivateServo();
+				break;
+			case 0x04:  // RQ_CONTINUOUS_SERVO (PIN, DIR, SPEED)
+				executeContinuousServo();
 				break;
             default:	// Unknown command received
            		break;
@@ -666,4 +698,62 @@ void executeActivateServo(void)
 			break;
 	}
 
+}
+
+void continuousServo(int index, int direction, int speed)
+{
+	if (servo_wait[index] == 0)
+	{
+		if (direction == 0)
+		{
+			servo_speed[index] = 0;
+			servo_wait[index] = 15;
+		}
+		else 
+		{
+			if ((direction > 0 && servo_speed[index] < 0)
+				|| (direction < 0 && servo_speed[index] > 0))
+			{
+				servo_wait[index] = 15;
+			}
+			servo_speed[index] = speed * (direction > 0 ? 1 : -1);
+			servo_skip[index] = (255 - speed)/20;
+		}
+
+		if (servo_speed[index] == 0)
+		{
+			servo_active[index] = 0;
+		}
+		else if (servo_speed[index] < 0)
+		{
+			servo_pulse[index] = 500;
+			servo_active[index] = 1;
+		}
+		else if (servo_speed[index] > 0)
+		{
+			servo_pulse[index] = 2500;
+			servo_active[index] = 1;
+		}				
+	}
+}
+
+void executeContinuousServo(void)
+{
+	int pin = ReceivedDataBuffer[1];
+	int direction = ReceivedDataBuffer[2];
+	int speed = ReceivedDataBuffer[3];
+
+	direction--; // -1 .. 0 .. 1
+
+	switch(pin)
+	{
+		case 33:
+			continuousServo(0, direction, speed);
+			break;
+		case 34:
+			continuousServo(1, direction, speed);
+			break;
+		default: // Invalid pin
+			break;
+	}
 }
