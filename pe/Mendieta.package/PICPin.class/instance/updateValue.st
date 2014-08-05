@@ -4,8 +4,8 @@ updateValue
 	(#(33 34) includes: number)
 		ifTrue: ["Servo pins"
 			pic protocol
-				servo: number
-				pwm: (value / 1023 * 2000 + 500) rounded.
+				continuousServo: number
+				speed: ((510 / 1023) * value - 255) rounded.
 			^ self].
 	pic protocol
 		digitalWrite: number

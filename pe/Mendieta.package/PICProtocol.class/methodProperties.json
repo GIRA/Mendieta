@@ -2,12 +2,14 @@
 	"class" : {
 		"initialize" : "Richo 8/22/2013 18:13",
 		"rqActivateServo" : "Richo 7/31/2014 15:56",
+		"rqContinuousServo" : "Richo 8/5/2014 17:47",
 		"rqDigitalWrite" : "Richo 8/22/2013 17:29",
 		"rqPinMode" : "Richo 6/25/2014 16:43",
 		"rqServoPWM" : "Richo 7/28/2014 16:53",
 		"shutDown" : "Richo 8/22/2013 18:13" },
 	"instance" : {
 		"connect" : "Richo 7/28/2014 15:54",
+		"continuousServo:speed:" : "Richo 8/5/2014 18:17",
 		"digitalWrite:value:" : "Richo 8/22/2013 17:42",
 		"disconnect" : "Richo 8/22/2013 17:41",
 		"hid" : "Richo 8/22/2013 17:26",
