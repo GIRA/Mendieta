@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Core-PinModes",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "PICOutputMode",
+	"pools" : [
+		 ],
+	"super" : "PICPinMode",
+	"type" : "normal" }

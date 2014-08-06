@@ -1,3 +1,3 @@
 configuring
 setInput
-	self mode: PICInput new
+	self mode: PICInputMode new

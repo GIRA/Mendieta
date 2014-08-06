@@ -1,3 +1,3 @@
 configuring
 setOutput
-	self mode: PICOutput new
+	self mode: PICOutputMode new

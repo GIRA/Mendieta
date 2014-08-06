@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Core-Devices",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"degrees" ],
+	"name" : "PICServo",
+	"pools" : [
+		 ],
+	"super" : "PICDevice",
+	"type" : "normal" }

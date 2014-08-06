@@ -1,0 +1,3 @@
+testing
+isAttached
+	^ pic notNil

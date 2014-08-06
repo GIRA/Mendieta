@@ -1,3 +1,3 @@
 accessing
 digitalPins
-	^ pins select: [:pin | pin isDigital]
+	^ layout digitalPins

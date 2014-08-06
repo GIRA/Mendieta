@@ -1,3 +1,3 @@
 accessing
 validPins
-	^ pins reject: [:pin | pin isInvalid]
+	^ layout validPins

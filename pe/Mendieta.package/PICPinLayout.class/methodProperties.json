@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"on:" : "Richo 8/6/2014 16:02" },
+	"instance" : {
+		"analogPins" : "Richo 8/6/2014 16:07",
+		"configurePins" : "Richo 8/6/2014 17:32",
+		"deleteConfigurationPins" : "Richo 8/6/2014 19:19",
+		"digitalPins" : "Richo 8/6/2014 16:08",
+		"initializeWith:" : "Richo 8/6/2014 17:33",
+		"isAnalog:" : "Richo 8/6/2014 16:01",
+		"isDigital:" : "Richo 8/6/2014 16:01",
+		"pins" : "Richo 8/6/2014 16:06",
+		"pin:" : "Richo 8/6/2014 16:06",
+		"validPins" : "Richo 8/6/2014 16:08" } }

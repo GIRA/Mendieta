@@ -1,4 +1,5 @@
 connection
 disconnect
-	self stopStepping.
+	self deleteConfiguration;
+		stopStepping.
 	protocol disconnect

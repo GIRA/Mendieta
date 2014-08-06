@@ -1,4 +1,5 @@
 connection
 connect
 	protocol connect.
-	self configurePins; startStepping
+	self configure;
+		startStepping

@@ -1,0 +1,19 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"attachToPins:" : "Richo 8/6/2014 17:34",
+		"attachToPins:on:" : "Richo 8/6/2014 18:50",
+		"attachTo:" : "Richo 8/6/2014 17:23",
+		"configure" : "Richo 8/6/2014 16:32",
+		"deleteConfiguration" : "Richo 8/6/2014 16:59",
+		"detach" : "Richo 8/6/2014 17:29",
+		"initialize" : "Richo 8/6/2014 17:29",
+		"isAttached" : "Richo 8/6/2014 17:26",
+		"pins" : "Richo 8/6/2014 17:28",
+		"pinsAverage" : "Richo 8/6/2014 18:48",
+		"pinsDo:" : "Richo 8/6/2014 17:28",
+		"setPinsInput" : "Richo 8/6/2014 19:01",
+		"setPinsOutput" : "Richo 8/6/2014 19:01",
+		"value" : "Richo 8/6/2014 18:54",
+		"value:" : "Richo 8/6/2014 18:54" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Core-Devices",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "PICLed",
+	"pools" : [
+		 ],
+	"super" : "PICDevice",
+	"type" : "normal" }

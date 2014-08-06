@@ -1,0 +1,3 @@
+configuring
+configure
+	self setPinsOutput

@@ -1,0 +1,15 @@
+{
+	"category" : "Mendieta-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"pins",
+		"devices" ],
+	"name" : "PICPinLayout",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

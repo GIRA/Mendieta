@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Core-Devices",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"speed" ],
+	"name" : "PICContinuousServo",
+	"pools" : [
+		 ],
+	"super" : "PICDevice",
+	"type" : "normal" }

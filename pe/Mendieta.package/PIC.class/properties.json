@@ -7,8 +7,9 @@
 	"commentStamp" : "",
 	"instvars" : [
 		"protocol",
-		"pins",
-		"process" ],
+		"process",
+		"layout",
+		"devices" ],
 	"name" : "PIC",
 	"pools" : [
 		 ],

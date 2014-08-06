@@ -1,0 +1,15 @@
+{
+	"category" : "Mendieta-Core-Devices",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"pic",
+		"pins" ],
+	"name" : "PICDevice",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
