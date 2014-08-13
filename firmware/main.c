@@ -11,27 +11,24 @@ void executePinMode(void);
 void executeServoPWM(void);
 void executeActivateServo(void);
 void executeContinuousServo(void);
+void executePWM(void);
 WORD_VAL ReadADC(short);
 void sendAnalogInputs(void);
 void handleTMR0Interrupt(void);
-
-#pragma code HIGH_INTERRUPT_VECTOR = 0x08
-void High_ISR (void)	{
-	_asm goto YourHighPriorityISRCode _endasm
-}
-#pragma code LOW_INTERRUPT_VECTOR = 0x18
-void Low_ISR (void){
-	_asm goto YourLowPriorityISRCode _endasm
-}
-	
-#pragma code
+void handleTMR1Interrupt(void);
 
 #define set_TMR0(x) {TMR0H=(x>>8); TMR0L=(x&0x00FF);}
 #define start_TMR0 T0CONbits.TMR0ON=1;
 
+#define set_TMR1(x) {TMR1H=(x>>8); TMR1L=(x&0x00FF);}
+#define start_TMR1 T1CONbits.TMR1ON=1;
+
 
 #define SERVO_0		 LATBbits.LATB0
 #define SERVO_1		 LATBbits.LATB1
+#define PWM_0		 LATBbits.LATB0
+#define PWM_1		 LATBbits.LATB1
+
 
 // NORMAL SERVOS
 UINT16 servo_pulse[2] = {0, 0};
@@ -47,30 +44,115 @@ SHORT servo_cycles[2] = {0, 0};
 SHORT servo_skipped[2] = {0, 0};
 SHORT cycles = 2; // How many cycles the servo *must* perform
 
+// PWM
+SHORT pwm[2] = {0, 0};
+SHORT pwm_last[2] = {0, 0};
+BYTE pwm_active[2] = {0, 0};
+BYTE pwm_current = 0;
+
 #pragma interrupt YourHighPriorityISRCode
 void YourHighPriorityISRCode(){
 	#if defined(USB_INTERRUPT)
 		USBDeviceTasks();
     #endif
-	
+
 	// TMR
 	if (TMR0_flag)  // ISR de la interrupcion de TMR0
 	{
-		/*
-		counter++;
-		if (counter >= 45)
-		{
-			SERVO_0 = 1 - SERVO_0;
-			counter = 0;
-		}
-		*/
 		handleTMR0Interrupt();
-		TMR0_flag=0;		
+		TMR0_flag = 0;
+	}
+	if (TMR1_flag)
+	{	
+		handleTMR1Interrupt();
+		TMR1_flag = 0;
 	}
 }
 #pragma interruptlow YourLowPriorityISRCode
 void YourLowPriorityISRCode(){}
+#pragma code HIGH_INTERRUPT_VECTOR = 0x08
+void High_ISR (void)	{
+	_asm goto YourHighPriorityISRCode _endasm
+}
+#pragma code LOW_INTERRUPT_VECTOR = 0x18
+void Low_ISR (void){
+	_asm goto YourLowPriorityISRCode _endasm
+}	
 #pragma code
+
+void handleTMR1Interrupt(void)
+{
+	UINT16 TMR1_ini;
+
+	switch (pwm_current)
+	{
+		case 0:
+			if (pwm_active[0]) PWM_0 = 1;
+			if (pwm_active[1]) PWM_1 = 1;
+			pwm_last[0] = pwm[0];
+			pwm_last[1] = pwm[1];
+			TMR1_ini = 65536 - (pwm[0] < pwm[1] ? pwm[0] : pwm[1]);
+			pwm_current++;
+			break;
+		case 1:
+			if (pwm_last[0] < pwm_last[1])
+			{
+				if (pwm_active[0]) PWM_0 = 0;
+				TMR1_ini = 65536 - pwm_last[1] + pwm_last[0];
+			}
+			else
+			{
+				if (pwm_active[1]) PWM_1 = 0;
+				TMR1_ini = 65536 - pwm_last[0] + pwm_last[1];
+			}
+			pwm_current++;
+			break;
+		case 2:
+			if (pwm_last[0] > pwm_last[1])
+			{
+				if (pwm_active[0]) PWM_0 = 0;
+				TMR1_ini = 65536 - 3000 + pwm_last[0];
+			}
+			else
+			{
+				if (pwm_active[1]) PWM_1 = 0;
+				TMR1_ini = 65536 - 3000 + pwm_last[1];
+			}
+			pwm_current = 0;
+			break;
+		default:
+			break;
+	}
+	/*
+	if (pwm_active[0])
+	{
+		PWM_0 = 1 - PWM_0;
+		if (PWM_0)
+		{
+			last_pwm[0] = pwm[0];
+			TMR1_ini = 65536 - pwm[0];		
+		}
+		else
+		{
+			TMR1_ini = 65536 - 3000 + last_pwm[0];
+		}
+	}
+	else
+	{
+		TMR1_ini = 65536 - 3000;
+		if (pwm[0] > 1500)
+		{
+			PWM_0 = 1;
+		}
+		else
+		{
+			PWM_0 = 0;
+		}
+	}
+	*/
+	set_TMR1(TMR1_ini);
+}
+
 
 UINT16 regularServo(int index)
 {
@@ -215,10 +297,15 @@ void setup(void)
 	TRISB = 0x00;
 	TRISD = 0x00;
 
-	// Interrupts and TMR0
+	// Interrupts and timers
 	T0CON = 0b00000001; // Prescaler 1:4
- 	enable_global_ints; enable_TMR0_int;
- 	start_TMR0;
+	T1CON = 0b00100000; // Prescaler 1:4
+ 	enable_global_ints;enable_perif_ints;
+	//enable_TMR0_int;
+	enable_TMR1_int;
+
+ 	//start_TMR0;
+	start_TMR1;
 }
 
 
@@ -270,7 +357,7 @@ void processUsbCommands(void)
 			case 0x01:	// RQ_PIN_VALUE (PIN, VAL)
 				executePinValue();
 				break;   	
-			case 0x02:  // RQ_SERVO_PWM (PIN, PULSE)
+			case 0x02:  // RQ_SERVO_PWM (PIN, PULSEL, PULSEH)
 				executeServoPWM();
 				break;
 			case 0x03:	// RQ_ACTIVATE_SERVO (PIN, ACTIVE)
@@ -278,6 +365,9 @@ void processUsbCommands(void)
 				break;
 			case 0x04:  // RQ_CONTINUOUS_SERVO (PIN, DIR, SPEED)
 				executeContinuousServo();
+				break;
+			case 0x05:	// RQ_PWM (PIN, WL, WH)
+				executePWM();
 				break;
             default:	// Unknown command received
            		break;
@@ -744,6 +834,55 @@ void executeContinuousServo(void)
 			break;
 		case 34:
 			continuousServo(1, direction, speed);
+			break;
+		default: // Invalid pin
+			break;
+	}
+}
+
+void executePWM(void)
+{
+	int pin = ReceivedDataBuffer[1];
+	int valueL = ReceivedDataBuffer[2];
+	int valueH = ReceivedDataBuffer[3];
+
+	UINT16 value = (UINT16)valueL | ((UINT16)valueH << 8);
+	
+	switch(pin)
+	{
+		case 33:
+			if (value < 5)
+			{
+				pwm_active[0] = 0;
+				PWM_0 = 0;
+			}
+			else if (value > 2995)
+			{
+				pwm_active[0] = 0;
+				PWM_0 = 1;
+			}
+			else
+			{
+				pwm_active[0] = 1;
+			}
+			pwm[0] = value;
+			break;
+		case 34:
+			if (value < 5)
+			{
+				pwm_active[1] = 0;
+				PWM_1 = 0;
+			}
+			else if (value > 2995)
+			{
+				pwm_active[1] = 0;
+				PWM_1 = 1;
+			}
+			else
+			{
+				pwm_active[1] = 1;
+			}
+			pwm[1] = value;
 			break;
 		default: // Invalid pin
 			break;
