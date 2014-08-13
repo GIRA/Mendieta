@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Etoys-Devices",
+	"classinstvars" : [
+		"ledHeadForm" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"ledHeadForm" ],
+	"name" : "PICLedMorph",
+	"pools" : [
+		 ],
+	"super" : "PICDeviceMorph",
+	"type" : "normal" }

@@ -1,6 +1,6 @@
 building
 buildAnalogPins
-	#(4 5 7 8) withIndexDo: [:pinNumber :i || pin label |
+	#(8 7 5 4) withIndexDo: [:pinNumber :i || pin label |
 		pin := (MendietaAnalogPinMorph on: (pic pin: pinNumber))
 			position: (136@16) + (i - 1 * 45.0@0.0);
 			yourself.

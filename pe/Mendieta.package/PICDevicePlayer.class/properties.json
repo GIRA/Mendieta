@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Etoys-Devices",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "PICDevicePlayer",
+	"pools" : [
+		 ],
+	"super" : "Player",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Etoys-Wiring",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "PICWireMorph",
+	"pools" : [
+		 ],
+	"super" : "PEWireMorph",
+	"type" : "normal" }

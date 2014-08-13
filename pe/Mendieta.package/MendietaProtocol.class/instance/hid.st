@@ -1,3 +1,0 @@
-private
-hid
-	^ HID forThisPlatform

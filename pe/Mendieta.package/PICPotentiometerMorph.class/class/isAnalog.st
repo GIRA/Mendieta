@@ -1,0 +1,3 @@
+devices
+isAnalog
+	^ true

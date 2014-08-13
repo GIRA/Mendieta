@@ -1,0 +1,3 @@
+speed
+speed
+	^ device speed

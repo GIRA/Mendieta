@@ -4,8 +4,11 @@
 		"on:" : "Richo 7/30/2014 17:26" },
 	"instance" : {
 		"attachNewDevice" : "Richo 7/30/2014 17:35",
-		"attach:" : "Richo 7/30/2014 17:46",
+		"attach:" : "Richo 8/7/2014 15:00",
+		"canBeAttachedTo:" : "Richo 8/7/2014 14:09",
+		"connectedToBy:" : "Richo 8/7/2014 14:28",
 		"controlDeviceBounds:" : "Richo 7/30/2014 17:33",
+		"disconnectedFromBy:" : "Richo 8/7/2014 14:46",
 		"initialize" : "Richo 7/30/2014 17:22",
 		"initializeAttachmentPoint" : "Richo 7/30/2014 17:23",
 		"initializeEventHandling" : "Richo 7/30/2014 16:54",
@@ -14,4 +17,5 @@
 		"mouseEnter:forMorph:" : "Richo 7/30/2014 16:54",
 		"mouseLeave:forMorph:" : "Richo 7/30/2014 16:54",
 		"move:" : "Richo 7/30/2014 17:25",
-		"newDevice" : "Richo 7/30/2014 17:24" } }
+		"newDevice" : "Richo 7/30/2014 17:24",
+		"wantsAttachmentFromEnd:ofConnector:" : "Richo 8/7/2014 14:24" } }

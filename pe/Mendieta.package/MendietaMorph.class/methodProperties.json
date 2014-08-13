@@ -2,7 +2,7 @@
 	"class" : {
 		"additionsToViewerCategories" : "Richo 7/30/2014 17:56" },
 	"instance" : {
-		"buildAnalogPins" : "Richo 7/30/2014 17:30",
+		"buildAnalogPins" : "Richo 8/7/2014 15:20",
 		"buildDigitalPins" : "Richo 7/30/2014 17:30",
 		"buildL293D" : "Richo 7/30/2014 16:37",
 		"buildPIC" : "Richo 7/30/2014 16:37",
@@ -14,7 +14,9 @@
 		"disconnect" : "Richo 7/30/2014 17:41",
 		"drawOn:" : "Richo 7/30/2014 17:19",
 		"initialize" : "Richo 7/30/2014 17:27",
+		"isConnectable" : "Richo 8/7/2014 14:23",
 		"isConnected" : "Richo 7/30/2014 17:41",
 		"newPlayerInstance" : "Richo 7/30/2014 17:39",
+		"pic" : "Richo 8/13/2014 18:33",
 		"prepareToBeSaved" : "Richo 7/30/2014 17:39",
 		"validCategories" : "Richo 7/30/2014 17:40" } }

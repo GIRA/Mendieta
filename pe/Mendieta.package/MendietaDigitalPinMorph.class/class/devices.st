@@ -1,3 +1,3 @@
 as yet unclassified
 devices
-	^ AttachableDeviceMorph digitalSubclasses
+	^ PICDeviceMorph digitalSubclasses

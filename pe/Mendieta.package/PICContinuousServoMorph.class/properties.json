@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Etoys-Devices",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "PICContinuousServoMorph",
+	"pools" : [
+		 ],
+	"super" : "PICDeviceMorph",
+	"type" : "normal" }

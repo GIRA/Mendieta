@@ -1,0 +1,16 @@
+{
+	"category" : "Mendieta-Etoys-Devices",
+	"classinstvars" : [
+		"form" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"device",
+		"attachmentPoints",
+		"attachments" ],
+	"name" : "PICDeviceMorph",
+	"pools" : [
+		 ],
+	"super" : "Morph",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Etoys-Devices",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "PICPotentiometerMorph",
+	"pools" : [
+		 ],
+	"super" : "PICDeviceMorph",
+	"type" : "normal" }

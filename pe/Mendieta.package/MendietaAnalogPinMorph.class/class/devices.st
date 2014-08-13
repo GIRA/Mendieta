@@ -1,3 +1,3 @@
 as yet unclassified
 devices
-	^ AttachableDeviceMorph analogSubclasses
+	^ PICDeviceMorph analogSubclasses

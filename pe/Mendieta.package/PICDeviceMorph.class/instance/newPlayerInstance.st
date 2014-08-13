@@ -1,0 +1,3 @@
+initialization
+newPlayerInstance
+	^ PICDevicePlayer newUserInstance
