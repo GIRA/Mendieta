@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Etoys",
+	"classinstvars" : [
+		"form" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "MendietaMotorPinMorph",
+	"pools" : [
+		 ],
+	"super" : "MendietaPinMorph",
+	"type" : "normal" }

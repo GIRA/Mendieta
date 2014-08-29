@@ -4,4 +4,5 @@ buildSubmorphs
 		buildPIC;
 		buildL293D;
 		buildAnalogPins;
-		buildDigitalPins
+		buildDigitalPins;
+		buildMotorPins

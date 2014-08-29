@@ -1,0 +1,14 @@
+{
+	"category" : "Mendieta-Core-Devices",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"speed" ],
+	"name" : "PICMotorDC",
+	"pools" : [
+		 ],
+	"super" : "PICDevice",
+	"type" : "normal" }
