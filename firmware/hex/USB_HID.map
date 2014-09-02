@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Wed Aug 13 20:11:48 2014
+Linker Map File - Created Thu Aug 21 16:01:09 2014
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -23,18 +23,18 @@ Linker Map File - Created Wed Aug 13 20:11:48 2014
          .idata_c018i.o_i    romdata   0x00000e    program   0x000000
      LOW_INTERRUPT_VECTOR       code   0x000018    program   0x000006
                    .cinit    romdata   0x00001e    program   0x00000e
-             .code_main.o       code   0x00002c    program   0x001c12
-       .code_usb_device.o       code   0x001c3e    program   0x001094
- .code_usb_function_hid.o       code   0x002cd2    program   0x0000ec
-.romdata_usb_descriptors.o    romdata   0x002dbe    program   0x0000c6
-                     PROG       code   0x002e84    program   0x0000a6
-               _cinit_scn       code   0x002f2a    program   0x00009e
-                   STRING       code   0x002fc8    program   0x000034
-             D10KTCYXCODE       code   0x002ffc    program   0x00002e
-         .code_fxd1616u.o       code   0x00302a    program   0x00002c
-                    .code       code   0x003056    program   0x000020
-             _startup_scn       code   0x003076    program   0x00001c
-          .idata_main.o_i    romdata   0x003092    program   0x000037
+             .code_main.o       code   0x00002c    program   0x001c16
+       .code_usb_device.o       code   0x001c42    program   0x001094
+ .code_usb_function_hid.o       code   0x002cd6    program   0x0000ec
+.romdata_usb_descriptors.o    romdata   0x002dc2    program   0x0000c6
+                     PROG       code   0x002e88    program   0x0000a6
+               _cinit_scn       code   0x002f2e    program   0x00009e
+                   STRING       code   0x002fcc    program   0x000034
+             D10KTCYXCODE       code   0x003000    program   0x00002e
+         .code_fxd1616u.o       code   0x00302e    program   0x00002c
+                    .code       code   0x00305a    program   0x000020
+             _startup_scn       code   0x00307a    program   0x00001c
+          .idata_main.o_i    romdata   0x003096    program   0x000037
     .config_300000_main.o    romdata   0x300000    program   0x000001
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
@@ -76,11 +76,11 @@ Linker Map File - Created Wed Aug 13 20:11:48 2014
                                Start         End      
                            ---------   ---------      
                             0x000000    0x00000d      
-                            0x000018    0x0030c8      
+                            0x000018    0x0030cc      
                             0x300000    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            12491 out of 33048 program addresses used, program memory utilization is 37%
+            12495 out of 33048 program addresses used, program memory utilization is 37%
 
 
 
@@ -88,27 +88,27 @@ Linker Map File - Created Wed Aug 13 20:11:48 2014
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
            BlinkUSBStatus   0x000218    program     extern C:\Mendieta\git\firmware\USB_HID.h
-                   D10K_1   0x003008    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x003014    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x003006    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                   D1616S   0x002ea6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x002eb4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x002eb0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x002ec6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x002e96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-             Delay10KTCYx   0x002ffc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                 FXD1616S   0x002e84    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD1616U   0x00302a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                 FXM1616S   0x002ed0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-      HIDGetReportHandler   0x002dba    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-      HIDSetReportHandler   0x002dbc    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+                   D10K_1   0x00300c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x003018    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x00300a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D1616S   0x002eaa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x002eb8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x002eb4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x002eca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x002e9a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+             Delay10KTCYx   0x003000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                 FXD1616S   0x002e88    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD1616U   0x00302e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                 FXM1616S   0x002ed4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+      HIDGetReportHandler   0x002dbe    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+      HIDSetReportHandler   0x002dc0    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
                  High_ISR   0x000008    program     extern C:\Mendieta\git\firmware\main.c
          InitializeSystem   0x00002c    program     static C:\Mendieta\git\firmware\USB_HID.h
                   Low_ISR   0x000018    program     extern C:\Mendieta\git\firmware\main.c
                 ProcessIO   0x00004a    program     extern C:\Mendieta\git\firmware\USB_HID.h
                   ReadADC   0x000b4e    program     extern C:\Mendieta\git\firmware\main.c
                   ReadPOT   0x0001ca    program     extern C:\Mendieta\git\firmware\USB_HID.h
-               TSIGN1616A   0x002f1c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x002f20    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
        USBCBCheckOtherReq   0x0002ac    program     extern C:\Mendieta\git\firmware\USB_HID.h
         USBCBErrorHandler   0x0002aa    program     extern C:\Mendieta\git\firmware\USB_HID.h
               USBCBInitEP   0x0002b2    program     extern C:\Mendieta\git\firmware\USB_HID.h
@@ -117,40 +117,40 @@ Linker Map File - Created Wed Aug 13 20:11:48 2014
              USBCBSuspend   0x0002a4    program     extern C:\Mendieta\git\firmware\USB_HID.h
      USBCBWakeFromSuspend   0x0002a6    program     extern C:\Mendieta\git\firmware\USB_HID.h
         USBCB_SOF_Handler   0x0002a8    program     extern C:\Mendieta\git\firmware\USB_HID.h
-       USBCheckHIDRequest   0x002cd2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-       USBCheckStdRequest   0x0021e2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-    USBClearInterruptFlag   0x002c9a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBConfigureEndpoint   0x002988    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-         USBCtrlEPService   0x001f60    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
- USBCtrlEPServiceComplete   0x00253a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfInHandler   0x00200c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBCtrlTrfOutHandler   0x001ffa    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfRxService   0x0027f4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-   USBCtrlTrfSetupHandler   0x001fb4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfTxService   0x0026de    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-            USBDeviceInit   0x001c3e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-           USBDeviceTasks   0x001cea    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-        USBEnableEndpoint   0x002a5c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-USBPrepareForNextSetupTrf   0x0020a6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-         USBStallEndpoint   0x002ac8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-          USBStallHandler   0x001ea4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-  USBStdFeatureReqHandler   0x0022aa    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBStdGetDscHandler   0x0023c4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-   USBStdGetStatusHandler   0x002478    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBStdSetCfgHandler   0x002916    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-               USBSuspend   0x001eea    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBTransferOnePacket   0x002ba8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-       USBWakeFromSuspend   0x001f22    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-               USB_CD_Ptr   0x002e7c    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-               USB_SD_Ptr   0x002e7e    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+       USBCheckHIDRequest   0x002cd6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+       USBCheckStdRequest   0x0021e6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+    USBClearInterruptFlag   0x002c9e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBConfigureEndpoint   0x00298c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+         USBCtrlEPService   0x001f64    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+ USBCtrlEPServiceComplete   0x00253e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfInHandler   0x002010    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBCtrlTrfOutHandler   0x001ffe    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfRxService   0x0027f8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+   USBCtrlTrfSetupHandler   0x001fb8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfTxService   0x0026e2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+            USBDeviceInit   0x001c42    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+           USBDeviceTasks   0x001cee    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+        USBEnableEndpoint   0x002a60    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+USBPrepareForNextSetupTrf   0x0020aa    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+         USBStallEndpoint   0x002acc    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+          USBStallHandler   0x001ea8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+  USBStdFeatureReqHandler   0x0022ae    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBStdGetDscHandler   0x0023c8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+   USBStdGetStatusHandler   0x00247c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBStdSetCfgHandler   0x00291a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+               USBSuspend   0x001eee    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBTransferOnePacket   0x002bac    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+       USBWakeFromSuspend   0x001f26    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+               USB_CD_Ptr   0x002e80    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+               USB_SD_Ptr   0x002e82    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
 USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git\firmware\USB_HID.h
                  UserInit   0x000030    program     extern C:\Mendieta\git\firmware\USB_HID.h
   YourHighPriorityISRCode   0x00039c    program     extern C:\Mendieta\git\firmware\main.c
    YourLowPriorityISRCode   0x00043e    program     extern C:\Mendieta\git\firmware\main.c
-              _2jContinue   0x002fe8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                   _3jEnd   0x002ff2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-       _D10KTCYXCODE_0010   0x00300c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x003018    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+              _2jContinue   0x002fec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                   _3jEnd   0x002ff6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+       _D10KTCYXCODE_0010   0x003010    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x00301c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
        ___case_1_lbl00070   0x00038a    program     static                          
       ___case_21_lbl00063   0x00036e    program     static                          
       ___case_22_lbl00064   0x000372    program     static                          
@@ -160,10 +160,10 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git
        ___case_4_lbl00067   0x00037e    program     static                          
    ___case_65535_lbl00069   0x000386    program     static                          
       ___default_lbl00071   0x00038e    program     static                          
-       ___return_lbl00000   0x003054    program     static                          
+       ___return_lbl00000   0x003058    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x003090    program     static                          
-       ___return_lbl00002   0x002fc6    program     static                          
+       ___return_lbl00001   0x003094    program     static                          
+       ___return_lbl00002   0x002fca    program     static                          
        ___return_lbl00061   0x000394    program     static                          
        ___return_lbl00076   0x00000c    program     static                          
        ___return_lbl00077   0x00001c    program     static                          
@@ -189,48 +189,48 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git
                __tmplbl_7   0x000356    program     static                          
                __tmplbl_8   0x000360    program     static                          
                __tmplbl_9   0x00036a    program     static                          
-            __zero_memory   0x003056    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                _do_cinit   0x002f2a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x00305a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                _do_cinit   0x002f2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x003076    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x00306c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-        configDescriptor1   0x002dd0    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-          continuousServo   0x001736    program     extern C:\Mendieta\git\firmware\main.c
-                copy_loop   0x002f9c    program     static                          
-            copy_one_byte   0x002fa2    program     static                          
+                 _startup   0x00307a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x003070    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+        configDescriptor1   0x002dd4    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+          continuousServo   0x00173a    program     extern C:\Mendieta\git\firmware\main.c
+                copy_loop   0x002fa0    program     static                          
+            copy_one_byte   0x002fa6    program     static                          
                     delay   0x000b00    program     extern C:\Mendieta\git\firmware\main.c
-               device_dsc   0x002dbe    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                     done   0x002fc6    program     static                          
-             done_copying   0x002fb0    program     static                          
-                  endloop   0x003050    program     static                          
-     executeActivateServo   0x0016c6    program     extern C:\Mendieta\git\firmware\main.c
-   executeContinuousServo   0x001a26    program     extern C:\Mendieta\git\firmware\main.c
-               executePWM   0x001afa    program     extern C:\Mendieta\git\firmware\main.c
-           executePinMode   0x001098    program     extern C:\Mendieta\git\firmware\main.c
-          executePinValue   0x000d1e    program     extern C:\Mendieta\git\firmware\main.c
-          executeServoPWM   0x001606    program     extern C:\Mendieta\git\firmware\main.c
+               device_dsc   0x002dc2    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                     done   0x002fca    program     static                          
+             done_copying   0x002fb4    program     static                          
+                  endloop   0x003054    program     static                          
+     executeActivateServo   0x0016ca    program     extern C:\Mendieta\git\firmware\main.c
+   executeContinuousServo   0x001a2a    program     extern C:\Mendieta\git\firmware\main.c
+               executePWM   0x001afe    program     extern C:\Mendieta\git\firmware\main.c
+           executePinMode   0x00109c    program     extern C:\Mendieta\git\firmware\main.c
+          executePinValue   0x000d22    program     extern C:\Mendieta\git\firmware\main.c
+          executeServoPWM   0x00160a    program     extern C:\Mendieta\git\firmware\main.c
       handleTMR0Interrupt   0x000a60    program     extern C:\Mendieta\git\firmware\main.c
       handleTMR1Interrupt   0x000464    program     extern C:\Mendieta\git\firmware\main.c
-                hid_rpt01   0x002e5f    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                     jEnd   0x002ffa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                    jLoop   0x002fdc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                     loop   0x000be4    program     extern C:\Mendieta\git\firmware\main.c
-                     loop   0x003034    program     static                          
-                     loop   0x003086    program     static                          
-                   loop_h   0x003064    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   loop_l   0x00306e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                hid_rpt01   0x002e63    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                     jEnd   0x002ffe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                    jLoop   0x002fe0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                     loop   0x000be8    program     extern C:\Mendieta\git\firmware\main.c
+                     loop   0x003038    program     static                          
+                     loop   0x00308a    program     static                          
+                   loop_h   0x003068    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   loop_l   0x003072    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                      main   0x000bb4    program     extern C:\Mendieta\git\firmware\main.c
-                   memset   0x002fc8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-       processUsbCommands   0x000c86    program     extern C:\Mendieta\git\firmware\main.c
+                   memset   0x002fcc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+       processUsbCommands   0x000c8a    program     extern C:\Mendieta\git\firmware\main.c
              regularServo   0x00065a    program     extern C:\Mendieta\git\firmware\main.c
-                    sd000   0x002df9    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd001   0x002dfd    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd002   0x002e31    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                     send   0x000be8    program     extern C:\Mendieta\git\firmware\main.c
-         sendAnalogInputs   0x001412    program     extern C:\Mendieta\git\firmware\main.c
+                    sd000   0x002dfd    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd001   0x002e01    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd002   0x002e35    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                     send   0x000bec    program     extern C:\Mendieta\git\firmware\main.c
+         sendAnalogInputs   0x001416    program     extern C:\Mendieta\git\firmware\main.c
                     setup   0x000bcc    program     extern C:\Mendieta\git\firmware\main.c
-                     test   0x002f44    program     static                          
-               zero_block   0x003064    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                     test   0x002f48    program     static                          
+               zero_block   0x003068    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
@@ -617,89 +617,89 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x000306    program     extern C:\Mendieta\git
                   ReadADC   0x000b4e    program     extern C:\Mendieta\git\firmware\main.c
                      main   0x000bb4    program     extern C:\Mendieta\git\firmware\main.c
                     setup   0x000bcc    program     extern C:\Mendieta\git\firmware\main.c
-                     loop   0x000be4    program     extern C:\Mendieta\git\firmware\main.c
-                     send   0x000be8    program     extern C:\Mendieta\git\firmware\main.c
-       processUsbCommands   0x000c86    program     extern C:\Mendieta\git\firmware\main.c
-          executePinValue   0x000d1e    program     extern C:\Mendieta\git\firmware\main.c
-           executePinMode   0x001098    program     extern C:\Mendieta\git\firmware\main.c
-         sendAnalogInputs   0x001412    program     extern C:\Mendieta\git\firmware\main.c
-          executeServoPWM   0x001606    program     extern C:\Mendieta\git\firmware\main.c
-     executeActivateServo   0x0016c6    program     extern C:\Mendieta\git\firmware\main.c
-          continuousServo   0x001736    program     extern C:\Mendieta\git\firmware\main.c
-   executeContinuousServo   0x001a26    program     extern C:\Mendieta\git\firmware\main.c
-               executePWM   0x001afa    program     extern C:\Mendieta\git\firmware\main.c
-            USBDeviceInit   0x001c3e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-           USBDeviceTasks   0x001cea    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-          USBStallHandler   0x001ea4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-               USBSuspend   0x001eea    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-       USBWakeFromSuspend   0x001f22    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-         USBCtrlEPService   0x001f60    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-   USBCtrlTrfSetupHandler   0x001fb4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBCtrlTrfOutHandler   0x001ffa    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfInHandler   0x00200c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-USBPrepareForNextSetupTrf   0x0020a6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-       USBCheckStdRequest   0x0021e2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-  USBStdFeatureReqHandler   0x0022aa    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBStdGetDscHandler   0x0023c4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-   USBStdGetStatusHandler   0x002478    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
- USBCtrlEPServiceComplete   0x00253a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfTxService   0x0026de    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBCtrlTrfRxService   0x0027f4    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-      USBStdSetCfgHandler   0x002916    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBConfigureEndpoint   0x002988    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-        USBEnableEndpoint   0x002a5c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-         USBStallEndpoint   0x002ac8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-     USBTransferOnePacket   0x002ba8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-    USBClearInterruptFlag   0x002c9a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
-       USBCheckHIDRequest   0x002cd2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-      HIDGetReportHandler   0x002dba    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-      HIDSetReportHandler   0x002dbc    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
-               device_dsc   0x002dbe    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-        configDescriptor1   0x002dd0    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd000   0x002df9    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd001   0x002dfd    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                    sd002   0x002e31    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                hid_rpt01   0x002e5f    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-               USB_CD_Ptr   0x002e7c    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-               USB_SD_Ptr   0x002e7e    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
-                 FXD1616S   0x002e84    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x002e96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                   D1616S   0x002ea6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x002eb0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x002eb4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x002ec6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXM1616S   0x002ed0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-               TSIGN1616A   0x002f1c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-                _do_cinit   0x002f2a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x002f44    program     static                          
-                copy_loop   0x002f9c    program     static                          
-            copy_one_byte   0x002fa2    program     static                          
-             done_copying   0x002fb0    program     static                          
-                     done   0x002fc6    program     static                          
-       ___return_lbl00002   0x002fc6    program     static                          
-                   memset   0x002fc8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                    jLoop   0x002fdc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-              _2jContinue   0x002fe8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                   _3jEnd   0x002ff2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                     jEnd   0x002ffa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-             Delay10KTCYx   0x002ffc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x003006    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                   D10K_1   0x003008    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0010   0x00300c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x003014    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x003018    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                 FXD1616U   0x00302a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x003034    program     static                          
-                  endloop   0x003050    program     static                          
-       ___return_lbl00000   0x003054    program     static                          
-            __zero_memory   0x003056    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   loop_h   0x003064    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-               zero_block   0x003064    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                compare_l   0x00306c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                   loop_l   0x00306e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
-                 _startup   0x003076    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x003086    program     static                          
-       ___return_lbl00001   0x003090    program     static                          
+                     loop   0x000be8    program     extern C:\Mendieta\git\firmware\main.c
+                     send   0x000bec    program     extern C:\Mendieta\git\firmware\main.c
+       processUsbCommands   0x000c8a    program     extern C:\Mendieta\git\firmware\main.c
+          executePinValue   0x000d22    program     extern C:\Mendieta\git\firmware\main.c
+           executePinMode   0x00109c    program     extern C:\Mendieta\git\firmware\main.c
+         sendAnalogInputs   0x001416    program     extern C:\Mendieta\git\firmware\main.c
+          executeServoPWM   0x00160a    program     extern C:\Mendieta\git\firmware\main.c
+     executeActivateServo   0x0016ca    program     extern C:\Mendieta\git\firmware\main.c
+          continuousServo   0x00173a    program     extern C:\Mendieta\git\firmware\main.c
+   executeContinuousServo   0x001a2a    program     extern C:\Mendieta\git\firmware\main.c
+               executePWM   0x001afe    program     extern C:\Mendieta\git\firmware\main.c
+            USBDeviceInit   0x001c42    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+           USBDeviceTasks   0x001cee    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+          USBStallHandler   0x001ea8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+               USBSuspend   0x001eee    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+       USBWakeFromSuspend   0x001f26    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+         USBCtrlEPService   0x001f64    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+   USBCtrlTrfSetupHandler   0x001fb8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBCtrlTrfOutHandler   0x001ffe    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfInHandler   0x002010    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+USBPrepareForNextSetupTrf   0x0020aa    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+       USBCheckStdRequest   0x0021e6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+  USBStdFeatureReqHandler   0x0022ae    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBStdGetDscHandler   0x0023c8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+   USBStdGetStatusHandler   0x00247c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+ USBCtrlEPServiceComplete   0x00253e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfTxService   0x0026e2    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBCtrlTrfRxService   0x0027f8    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+      USBStdSetCfgHandler   0x00291a    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBConfigureEndpoint   0x00298c    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+        USBEnableEndpoint   0x002a60    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+         USBStallEndpoint   0x002acc    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+     USBTransferOnePacket   0x002bac    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+    USBClearInterruptFlag   0x002c9e    program     extern C:\Mendieta\git\firmware\Microchip\Usb\usb_device.c
+       USBCheckHIDRequest   0x002cd6    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+      HIDGetReportHandler   0x002dbe    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+      HIDSetReportHandler   0x002dc0    program     extern C:\Mendieta\git\firmware\Microchip\Usb\HID Device Driver\usb_function_hid.c
+               device_dsc   0x002dc2    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+        configDescriptor1   0x002dd4    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd000   0x002dfd    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd001   0x002e01    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                    sd002   0x002e35    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                hid_rpt01   0x002e63    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+               USB_CD_Ptr   0x002e80    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+               USB_SD_Ptr   0x002e82    program     extern C:\Mendieta\git\firmware\usb_descriptors.c
+                 FXD1616S   0x002e88    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x002e9a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                   D1616S   0x002eaa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x002eb4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x002eb8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x002eca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXM1616S   0x002ed4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x002f20    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                _do_cinit   0x002f2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x002f48    program     static                          
+                copy_loop   0x002fa0    program     static                          
+            copy_one_byte   0x002fa6    program     static                          
+             done_copying   0x002fb4    program     static                          
+                     done   0x002fca    program     static                          
+       ___return_lbl00002   0x002fca    program     static                          
+                   memset   0x002fcc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                    jLoop   0x002fe0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+              _2jContinue   0x002fec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                   _3jEnd   0x002ff6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                     jEnd   0x002ffe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+             Delay10KTCYx   0x003000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x00300a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x00300c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0010   0x003010    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x003018    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x00301c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                 FXD1616U   0x00302e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x003038    program     static                          
+                  endloop   0x003054    program     static                          
+       ___return_lbl00000   0x003058    program     static                          
+            __zero_memory   0x00305a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   loop_h   0x003068    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+               zero_block   0x003068    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                compare_l   0x003070    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                   loop_l   0x003072    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4550.asm
+                 _startup   0x00307a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x00308a    program     static                          
+       ___return_lbl00001   0x003094    program     static                          
                __config_0   0x300000    program     static C:\Mendieta\git\firmware\main.c
                __config_1   0x300001    program     static C:\Mendieta\git\firmware\main.c
                __config_2   0x300002    program     static C:\Mendieta\git\firmware\main.c

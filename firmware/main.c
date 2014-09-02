@@ -301,10 +301,10 @@ void setup(void)
 	T0CON = 0b00000001; // Prescaler 1:4
 	T1CON = 0b00100000; // Prescaler 1:4
  	enable_global_ints;enable_perif_ints;
-	//enable_TMR0_int;
+	enable_TMR0_int;
 	enable_TMR1_int;
 
- 	//start_TMR0;
+ 	start_TMR0;
 	start_TMR1;
 }
 
