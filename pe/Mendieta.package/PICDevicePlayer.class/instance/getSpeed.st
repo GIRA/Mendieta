@@ -1,3 +1,3 @@
-continuous servo
+motor dc
 getSpeed
 	^ self sendMessageToCostume: #speed

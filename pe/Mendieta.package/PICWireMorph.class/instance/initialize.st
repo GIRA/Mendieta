@@ -1,7 +1,7 @@
 initialization
 initialize
 	super initialize.
-	self beOrthogonal: true;
+	self beOrthogonal: false;
 		 beSmoothCurve: true;
 		 lineColor: Color red;
 		 lineWidth: 4;

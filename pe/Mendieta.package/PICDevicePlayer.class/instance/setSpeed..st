@@ -1,3 +1,3 @@
-continuous servo
+motor dc
 setSpeed: aNumber
-	^ self sendMessageToCostume: #speed: with:aNumber
+	^ self sendMessageToCostume: #speed: with: aNumber

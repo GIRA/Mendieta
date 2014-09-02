@@ -1,12 +1,14 @@
 {
 	"class" : {
-		"additionsToViewerCategories" : "Richo 7/30/2014 17:56" },
+		"additionsToViewerCategories" : "Richo 7/30/2014 17:56",
+		"descriptionForPartsBin" : "Richo 8/14/2014 15:16" },
 	"instance" : {
 		"buildAnalogPins" : "Richo 8/7/2014 15:20",
 		"buildDigitalPins" : "Richo 7/30/2014 17:30",
 		"buildL293D" : "Richo 7/30/2014 16:37",
+		"buildMotorPins" : "Richo 8/21/2014 15:00",
 		"buildPIC" : "Richo 7/30/2014 16:37",
-		"buildSubmorphs" : "Richo 7/30/2014 16:47",
+		"buildSubmorphs" : "Richo 8/14/2014 16:15",
 		"buildUSB" : "Richo 7/30/2014 16:36",
 		"categoriesForViewer" : "Richo 7/30/2014 17:39",
 		"connect" : "Richo 7/30/2014 17:41",
