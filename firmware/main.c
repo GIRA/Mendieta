@@ -108,7 +108,7 @@ void handleTMR1Interrupt(void)
 			pwm_current++;
 			break;
 		case 2:
-			if (pwm_last[0] > pwm_last[1])
+			if (pwm_last[0] >= pwm_last[1])
 			{
 				if (pwm_active[0]) PWM_0 = 0;
 				TMR1_ini = 65536 - 3000 + pwm_last[0];
