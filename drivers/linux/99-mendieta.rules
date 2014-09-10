@@ -34,11 +34,3 @@ KERNEL=="ttyACM*", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="003f", MODE:="066
 # To fix, add this near top of /lib/udev/rules.d/77-nm-probe-modem-capabilities.rules
 #   SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789]?", GOTO="nm_modem_probe_end" 
 #
-#
-# (old udev rules)
-#SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="047[78]", MODE:="0666"
-#SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="048[02]", MODE:="0666"
-#KERNEL=="ttyACM*", SYMLINK+="ttyUSB00%n", MODE:="0666"
-#
-# old versions of librxtx within Arduino needed this extra symlink, new versions recognize "ttyACM"
-#KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789]?", SYMLINK+="ttyUSB00%n", MODE:="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
