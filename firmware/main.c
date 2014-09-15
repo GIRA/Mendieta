@@ -26,8 +26,8 @@ void handleTMR1Interrupt(void);
 
 #define SERVO_0		 LATBbits.LATB0
 #define SERVO_1		 LATBbits.LATB1
-#define PWM_0		 LATBbits.LATB0
-#define PWM_1		 LATBbits.LATB1
+#define PWM_0		 LATBbits.LATB7
+#define PWM_1		 LATBbits.LATB4
 
 
 // NORMAL SERVOS
