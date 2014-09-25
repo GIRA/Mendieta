@@ -1,6 +1,6 @@
 building
 buildMotorPins
-	#(33 34) withIndexDo: [:pinNumber :i || pin label |
+	#(40 "39 38" 37 "36 35") withIndexDo: [:pinNumber :i || pin label |
 		pin := (MendietaMotorPinMorph on: (pic pin: pinNumber))
 			position: (314 @ 122) + (0.0 @ (i - 1* 40.0));
 			yourself.

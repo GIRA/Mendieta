@@ -1,3 +1,3 @@
 as yet unclassified
 isPressed
-	^ self value > 0
+	^ self value > 512

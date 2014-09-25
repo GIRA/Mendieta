@@ -850,7 +850,7 @@ void executePWM(void)
 	
 	switch(pin)
 	{
-		case 33:
+		case 40:
 			if (value < 5)
 			{
 				pwm_active[0] = 0;
@@ -867,7 +867,7 @@ void executePWM(void)
 			}
 			pwm[0] = value;
 			break;
-		case 34:
+		case 37:
 			if (value < 5)
 			{
 				pwm_active[1] = 0;
