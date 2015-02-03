@@ -64,7 +64,7 @@ BOOL blinkStatusValid = TRUE;
 void BlinkUSBStatus(void);
 BOOL Switch2IsPressed(void);
 BOOL Switch3IsPressed(void);
-static void InitializeSystem(void);
+void InitializeSystem(void);
 void ProcessIO(void);
 void UserInit(void);
 void YourHighPriorityISRCode();
@@ -74,7 +74,7 @@ WORD_VAL ReadPOT(void);
 
 /********************************************************************/
 
-static void InitializeSystem(void)
+void InitializeSystem(void)
 {
 
     //ADCON1 |= 0x0F;                 // Default all pins to digital
