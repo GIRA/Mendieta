@@ -18,26 +18,15 @@ void executePWM(void);
 WORD_VAL ReadADC(short);
 void sendAnalogInputs(void);
 void send(void);
+void incrementTick(void);
 
-int tick = 0;
-int lastSendTime = 0;
 
-// NORMAL SERVOS
-UINT16 servo_pulse[2] = {0, 0};
-UINT16 servo_lastp[2] = {0, 0};
-BYTE servo_active[2] = {0, 0};
-BYTE servo_current = 0;
+/* INTERRUPTS */
+#define set_TMR0(x) {TMR0H=(x>>8); TMR0L=(x&0x00FF);}
+#define start_TMR0 T0CONbits.TMR0ON=1;
 
-// CONTINUOUS SERVOS
-SHORT servo_speed[2] = {0, 0};
-SHORT servo_wait[2] = {0, 0};
-SHORT servo_skip[2] = {0, 0};
-SHORT servo_cycles[2] = {0, 0};
-SHORT servo_skipped[2] = {0, 0};
-SHORT cycles = 2; // How many cycles the servo *must* perform
-
-// PWM
-SHORT pwm[2] = {0, 0};
-SHORT pwm_last[2] = {0, 0};
-BYTE pwm_active[2] = {0, 0};
-BYTE pwm_current = 0;
+#define set_TMR1(x) {TMR1H=(x>>8); TMR1L=(x&0x00FF);}
+#define start_TMR1 T1CONbits.TMR1ON=1;
+ 
+void handleTMR0Interrupt(void);
+void handleTMR1Interrupt(void);

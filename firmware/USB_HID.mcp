@@ -44,7 +44,6 @@ file_016=USB Stack
 file_017=.
 file_018=.
 file_019=.
-file_020=.
 [GENERATED_FILES]
 file_000=no
 file_001=no
@@ -66,7 +65,6 @@ file_016=no
 file_017=no
 file_018=no
 file_019=no
-file_020=no
 [OTHER_FILES]
 file_000=no
 file_001=no
@@ -88,14 +86,13 @@ file_016=no
 file_017=no
 file_018=no
 file_019=no
-file_020=no
 [FILE_INFO]
 file_000=main.c
 file_001=usb_descriptors.c
 file_002=Microchip\Usb\usb_device.c
 file_003=Microchip\Usb\HID Device Driver\usb_function_hid.c
 file_004=firmware.c
-file_005=interrupts.c
+file_005=USB_HID.c
 file_006=HardwareProfile.h
 file_007=usb_config.h
 file_008=Microchip\Include\Compiler.h
@@ -110,7 +107,6 @@ file_016=Microchip\Include\Usb\usb_hal.h
 file_017=USB_HID.h
 file_018=int_defs_C18.h
 file_019=firmware.h
-file_020=interrupts.h
 [SUITE_INFO]
 suite_guid={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
 suite_state=

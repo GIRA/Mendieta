@@ -1,5 +1,6 @@
 #include <delays.h>
 #include "interrupts.h"
+#include "firmware.h"
 
 
 void setup(void);
@@ -22,7 +23,7 @@ void main(void){
         USBDeviceTasks(); 
         #endif
 
-		tick++;	  
+		incrementTick();
         loop();
     }	
 }
