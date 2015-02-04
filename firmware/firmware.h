@@ -30,3 +30,6 @@ void incrementTick(void);
  
 void handleTMR0Interrupt(void);
 void handleTMR1Interrupt(void);
+
+void YourHighPriorityISRCode();
+void YourLowPriorityISRCode();

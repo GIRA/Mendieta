@@ -9,18 +9,7 @@
 
 #include "./USB/usb_function_hid.h"
 
-
-/** PRIVATE PROTOTYPES *********************************************/
-void BlinkUSBStatus(void);
-BOOL Switch2IsPressed(void);
-BOOL Switch3IsPressed(void);
-void InitializeSystem(void);
-void ProcessIO(void);
-void UserInit(void);
-void YourHighPriorityISRCode();
-void YourLowPriorityISRCode();
-WORD_VAL ReadPOT(void);
-
+void USBInit(void);
 void USBWriteAt(int, unsigned char);
 void USBFlush(void);
 BOOL USBDataAvailable(void);
