@@ -8,17 +8,11 @@ int tick = 0;
 int lastSendTime = 0;
 
 // NORMAL SERVOS
-UINT16 servo_pulse[2] = {0, 0};
-UINT16 servo_lastp[2] = {0, 0};
-BYTE servo_active[2] = {0, 0};
+Servo servos[2];
 BYTE servo_current = 0;
 
 // CONTINUOUS SERVOS
-SHORT servo_speed[2] = {0, 0};
-SHORT servo_wait[2] = {0, 0};
-SHORT servo_skip[2] = {0, 0};
-SHORT servo_cycles[2] = {0, 0};
-SHORT servo_skipped[2] = {0, 0};
+
 SHORT cycles = 2; // How many cycles the servo *must* perform
 
 // PWM
@@ -26,6 +20,21 @@ SHORT pwm[2] = {0, 0};
 SHORT pwm_last[2] = {0, 0};
 BYTE pwm_active[2] = {0, 0};
 BYTE pwm_current = 0;
+
+void init() {
+	int i;
+	for (i = 0; i < 2; i++) {
+		Servo s = servos[i];
+		s.pulse = 0;
+		s.lastPulse = 0;
+		s.active = 0;
+		s.speed = 0;
+		s.wait = 0;
+		s.skip = 0;
+		s.cycles = 0;
+		s.skipped = 0;
+	}
+}
 
 void incrementTick(void) {
 	tick++;
@@ -441,18 +450,17 @@ void executeServoPWM(void) {
 	int valueH = USBReadAt(3);
 
 	UINT16 value = (UINT16)valueL | ((UINT16)valueH << 8);
-	
+
 	switch(pin) {
 		case 33:
-			servo_pulse[0] = value;
+			servos[0].pulse = value;
 			break;
 		case 34:
-			servo_pulse[1] = value;
+			servos[1].pulse = value;
 			break;
 		default: // Invalid pin
 			break;
 	}
-
 }
 
 void executeActivateServo(void) {
@@ -461,10 +469,10 @@ void executeActivateServo(void) {
 
 	switch(pin) {
 		case 33:
-			servo_active[0] = active;
+			servos[0].active = active;
 			break;
 		case 34:
-			servo_active[1] = active;
+			servos[1].active = active;
 			break;
 		default: // Invalid pin
 			break;
@@ -473,27 +481,28 @@ void executeActivateServo(void) {
 }
 
 void continuousServo(int index, int direction, int speed) {
-	if (servo_wait[index] == 0) {
+	Servo servo = servos[index];
+	if (servo.wait == 0) {
 		if (direction == 0) {
-			servo_speed[index] = 0;
-			servo_wait[index] = 15;
+			servo.speed = 0;
+			servo.wait = 15;
 		} else {
-			if ((direction > 0 && servo_speed[index] < 0)
-					|| (direction < 0 && servo_speed[index] > 0)) {
-				servo_wait[index] = 15;
+			if ((direction > 0 && servo.speed < 0)
+					|| (direction < 0 && servo.speed > 0)) {
+				servo.wait = 15;
 			}
-			servo_speed[index] = speed * (direction > 0 ? 1 : -1);
-			servo_skip[index] = (255 - speed)/20;
+			servo.speed = speed * (direction > 0 ? 1 : -1);
+			servo.skip = (255 - speed)/20;
 		}
 
-		if (servo_speed[index] == 0) {
-			servo_active[index] = 0;
-		} else if (servo_speed[index] < 0) {
-			servo_pulse[index] = 500;
-			servo_active[index] = 1;
-		} else if (servo_speed[index] > 0) {
-			servo_pulse[index] = 2500;
-			servo_active[index] = 1;
+		if (servo.speed == 0) {
+			servo.active = 0;
+		} else if (servo.speed < 0) {
+			servo.pulse = 500;
+			servo.active = 1;
+		} else if (servo.speed > 0) {
+			servo.pulse = 2500;
+			servo.active = 1;
 		}				
 	}
 }
@@ -653,14 +662,15 @@ void handleTMR1Interrupt(void) {
 
 
 UINT16 regularServo(int index) {
+	Servo servo = servos[index];
 	BYTE high = 0;
-	if (servo_active[index] == 1 
-		&& servo_wait[index] == 0
-		&& (servo_skip[index] == 0
-			|| (servo_skipped[index] == 0 
-				&& servo_cycles[index] < cycles))) {
-		servo_cycles[index] = servo_cycles[index] + 1;
-		servo_skipped[index] = 0;
+	if (servo.active == 1 
+		&& servo.wait == 0
+		&& (servo.skip == 0
+			|| (servo.skipped == 0 
+				&& servo.cycles < cycles))) {
+		servo.cycles = servo.cycles + 1;
+		servo.skipped = 0;
 		switch (index) {
 			case 0: 
 				SERVO_0 = 1 - SERVO_0; 
@@ -675,21 +685,21 @@ UINT16 regularServo(int index) {
 				return 65536 - 7500;
 		}
 		if (high) {
-			servo_lastp[index] = servo_pulse[index];
-			return 65536 - (UINT16)(servo_pulse[index] * 3);
+			servo.lastPulse = servo.pulse;
+			return 65536 - (UINT16)(servo.pulse * 3);
 		} else {
 			servo_current = (servo_current + 1) % 8;
-			return 65536 - 7500 + (UINT16)(servo_lastp[index] * 3);			
+			return 65536 - 7500 + (UINT16)(servo.lastPulse * 3);			
 		}
 	} else {
-		if (servo_wait[index] > 0) {
-			servo_wait[index] = servo_wait[index] - 1;
+		if (servo.wait > 0) {
+			servo.wait = servo.wait - 1;
 		}
-		if (servo_skipped[index] < servo_skip[index]) {
-			servo_skipped[index] = servo_skipped[index] + 1;
-			servo_cycles[index] = 0;
+		if (servo.skipped < servo.skip) {
+			servo.skipped = servo.skipped + 1;
+			servo.cycles = 0;
 		} else {
-			servo_skipped[index] = 0;
+			servo.skipped = 0;
 		}
 		servo_current = (servo_current + 1) % 8;
 		return 65536 - 7500;

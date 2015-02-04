@@ -68,6 +68,8 @@ void main(void){
 
 void setup(void)
 {
+	init();
+
 	// PORT modes
 	TRISA = 0x00;
 	TRISB = 0x00;

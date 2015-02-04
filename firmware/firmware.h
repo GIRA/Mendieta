@@ -1,12 +1,23 @@
 #include "USB_HID.h"
 #include "int_defs_C18.h"
 
-
 #define SERVO_0		 LATBbits.LATB0
 #define SERVO_1		 LATBbits.LATB1
 #define PWM_0		 LATBbits.LATB7
 #define PWM_1		 LATBbits.LATB4
 
+typedef struct {
+	UINT16 pulse;
+	UINT16 lastPulse;
+	BYTE active;
+	SHORT speed;
+	SHORT wait;
+	SHORT skip;
+	SHORT cycles;
+	SHORT skipped;
+} Servo;
+
+void init(void);
 void processUsbCommands(void);
 void executePinValue(void);
 void executePinMode(void);
